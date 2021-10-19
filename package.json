@@ -1,31 +1,33 @@
 {
-  "name": "widgets",
+  "name": "calculator",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode=development --watch"
+    "postinstall": "webpack",
+    "webpack": "webpack --watch --mode=development"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jackiemarsh/Widgets.git"
-  },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jackiemarsh/Widgets/issues"
-  },
-  "homepage": "https://github.com/jackiemarsh/Widgets#readme",
   "dependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "webpack": "^5.58.2",
-    "webpack-cli": "^4.9.1"
-  }
+    "react": "^15.7.0",
+    "react-dom": "^15.7.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackiemarsh/Widgets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jackiemarsh/Widgets/issues"
+  },
+  "homepage": "https://github.com/jackiemarsh/Widgets#readme",
+  "description": ""
 }
