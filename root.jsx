@@ -2,22 +2,16 @@ import React from 'react';
 
 import Clock from './clock';
 
-class Root extends React.Component{
-  constructor(props){
-    super(props);
-    //your code here
-  }
+function Root () {
 
-  //your code here
-
-  render(){
+  
     return (
       <div>
         <h1>My Widgets Project</h1>
-        <Clock />
+        {/* <Clock /> */}
       </div>
     );
-  }
+  
 }
 
 export default Root;
