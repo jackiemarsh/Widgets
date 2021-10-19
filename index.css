@@ -46,3 +46,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.main-cont {
+	display: flex;
+	flex-direction: column;
+}
+.title {
+	font-size: 80px;
+	align-self: center;
+}

@@ -6,8 +6,8 @@ function Root () {
 
   
     return (
-      <div>
-        <h1>My Widgets Project</h1>
+      <div className="main-cont">
+        <h1 className="title">My Widgets Project</h1>
         {/* <Clock /> */}
       </div>
     );
