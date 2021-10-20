@@ -16,7 +16,10 @@ import React, { useState } from 'react';
 function Tabs(props)  {
 
     const [index, setIndex] = React.useState(0)
-    const content = props.tabInfo[index]
+    // const content = props.tabInfo[index]
+    const tabHeaders = props.tabInfo.map((header, idx) => {
+
+    })
 
     return(
         <div>
@@ -26,7 +29,7 @@ function Tabs(props)  {
             </ul>
             <div>
                 <span>
-                    {content}
+                    
                 </span>
             </div>
         </div>

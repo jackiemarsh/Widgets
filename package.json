@@ -1,15 +1,23 @@
 {
   "name": "widgets",
   "version": "1.0.0",
+  "description": "",
   "main": "app.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "webpack",
-    "webpack": "webpack --watch --mode=development"
+    "webpack": "webpack --mode=development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackiemarsh/Widgets.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackiemarsh/Widgets/issues"
+  },
+  "homepage": "https://github.com/jackiemarsh/Widgets#readme",
   "dependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
@@ -19,14 +27,5 @@
     "react-dom": "^17.0.2",
     "webpack": "^5.59.0",
     "webpack-cli": "^4.9.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jackiemarsh/Widgets.git"
-  },
-  "bugs": {
-    "url": "https://github.com/jackiemarsh/Widgets/issues"
-  },
-  "homepage": "https://github.com/jackiemarsh/Widgets#readme",
-  "description": ""
+  }
 }
