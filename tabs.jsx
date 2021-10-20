@@ -18,18 +18,24 @@ function Tabs(props)  {
     const [index, setIndex] = React.useState(0)
     // const content = props.tabInfo[index]
     const tabHeaders = props.tabInfo.map((header, idx) => {
-
+        return(
+            <li className="tab-header" key={idx}>
+                {idx}
+                :
+                {header.title}
+            </li>
+        )
     })
 
     return(
         <div>
             <h1>Tabby Tabby</h1>
             <ul>
-                {/* <Headers /> */}
+                {tabHeaders}
             </ul>
             <div>
                 <span>
-                    
+                   
                 </span>
             </div>
         </div>
