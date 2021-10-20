@@ -16,12 +16,19 @@ import React, { useState } from 'react';
 function Tabs(props)  {
 
     const [index, setIndex] = React.useState(0)
+    const content = props.tabInfo[index]
 
     return(
         <div>
+            <h1>Tabby Tabby</h1>
             <ul>
-                <h1>Tabby Tabby</h1>
+                {/* <Headers /> */}
             </ul>
+            <div>
+                <span>
+                    {content}
+                </span>
+            </div>
         </div>
     );
 };
