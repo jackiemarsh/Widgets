@@ -21,7 +21,6 @@ function Clock() {
             <h1>Clock Time</h1>
         </div>
     )
-    
 };
 
 export default Clock;
