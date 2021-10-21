@@ -64,6 +64,7 @@ table {
 	flex-direction: column;
 	/* justify-content: space-between; */
 	height: 45vh;
+	box-sizing: border-box;
 }
 
 .tab-container {
@@ -71,15 +72,18 @@ table {
 	/* justify-content: stretch; */
 	/* align-items: space-between; */
 	width: 55vw;
+	box-sizing: border-box;
 }
 
 .tab-header {
 	border: solid 1px darkgray;
-	width: 30%;
+	width: 33%;
+	/* box-sizing: border-box; */
 }
 
 .tab-content {
 	padding: 12px;
 	border: solid 1px darkgray;
 	width: 100%;
+	box-sizing: border-box;
 }
