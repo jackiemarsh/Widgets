@@ -17,6 +17,7 @@ function Root() {
         <h1 className="title">My Widgets Project</h1>
         {/* <Clock /> */}
         <Tabs tabInfo={tabInfo}/>
+        <Weather />
       </div>
     );
   
