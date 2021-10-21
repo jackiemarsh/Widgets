@@ -48,10 +48,38 @@ table {
 }
 
 .main-cont {
+	margin: 24px;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 .title {
 	font-size: 80px;
 	align-self: center;
+}
+
+.main-tabs {
+	margin-top: 8vh;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: space-between; */
+	height: 45vh;
+}
+
+.tab-container {
+	display: flex;
+	/* justify-content: stretch; */
+	/* align-items: space-between; */
+	width: 55vw;
+}
+
+.tab-header {
+	border: solid 1px darkgray;
+	width: 30%;
+}
+
+.tab-content {
+	padding: 12px;
+	border: solid 1px darkgray;
+	width: 100%;
 }

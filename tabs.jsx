@@ -28,14 +28,14 @@ function Tabs(props)  {
     })
 
     return(
-        <div>
+        <div className="main-tabs">
             <h1>Tabby Tabby</h1>
-            <ul>
+            <ul className="tab-container">
                 {tabHeaders}
             </ul>
-            <div>
+            <div className="tab-content">
                 <span>
-                   
+                   {props.tabInfo[index].content}
                 </span>
             </div>
         </div>
