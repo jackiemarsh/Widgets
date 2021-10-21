@@ -81,6 +81,15 @@ table {
 	/* box-sizing: border-box; */
 }
 
+.tab-header:hover {
+	background-color: lightgray;
+	cursor: pointer;
+}
+
+.active{
+	font-weight: bold;
+  }
+
 .tab-content {
 	padding: 12px;
 	border: solid 1px darkgray;
