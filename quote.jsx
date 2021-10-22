@@ -30,11 +30,13 @@ function Quote() {
     }
       
     return(
-        <div>
+        <div className="quote-main">
             <h1>Random Quotes</h1>
-            <button onClick={getQuote}>Click Here</button>
-            <div>{quote}</div>
-            <div>- {author}</div>
+            <button onClick={getQuote} className="quote-button">Click Here</button>
+            <div className="quote-container">
+                <div className="quote">{quote}</div>
+                <div className="author">- {author}</div>
+            </div>
         </div>
     )
 };

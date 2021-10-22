@@ -200,3 +200,34 @@ span {
 	margin: 18px;
 	width: 120px;
 }
+
+.quote-main {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.quote-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 90%;
+	/* margin: 12px; */
+	box-sizing: border-box;
+}
+
+.quote-container > * {
+	font-size: 80%;
+	box-sizing: border-box;
+}
+
+.text {
+	width: 90%;
+}
+
+.quote-button {
+	cursor: pointer;
+	width: 30%;
+	margin: 8px;
+}
