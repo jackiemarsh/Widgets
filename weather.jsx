@@ -14,6 +14,7 @@ const toQueryString = (obj) => {
 function Weather(props) {
 
     const [weather, setWeather] = useState(null)
+    const [forecast, setForecast] = useState(null)
     const [weatherIcon, setWeatherIcon] = useState(null)
     const [temp, setTemp] = useState(null)
     const [latitude, setLatitude] = useState(0)
@@ -44,6 +45,15 @@ function Weather(props) {
                   console.error(error);
               });
         });
+        if (!city) {
+        return(
+          <div className="loading">Locating you</div>
+        )
+      } else {
+          return(
+            <>Your location is: {city}</>
+          )
+        }
     }
     useEffect(findLocation, [])
 
@@ -51,20 +61,27 @@ function Weather(props) {
     const findWeather = () => {
     //     const apiKey = 'a41cd0fb11238b932ebc8c60d0c85b87'
     const options = {
-        method: 'GET',
-        url: 'https://community-open-weather-map.p.rapidapi.com/forecast',
-        params: {lat: latitude.toString(), lon: longitude.toString()},
-        headers: {
-          'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
-          'x-rapidapi-key': '6d8b070cf8mshb79c3d891362f1cp18dca4jsn783f72151278'
-        }
-      };
+      method: 'GET',
+      url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
+      params: {
+        q: `${city}`,
+        lat: `${latitude}`,
+        lon: `${longitude}`,
+        cnt: '4',
+        units: 'imperial'
+      },
+      headers: {
+        'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
+        'x-rapidapi-key': '6d8b070cf8mshb79c3d891362f1cp18dca4jsn783f72151278'
+      }
+    };
       
       axios.request(options).then(function (response) {
-          setTemp(Math.floor((response.data.list[0].main.temp - 273.15)* 1.8 + 32));
+          // setTemp(Math.floor((response.data.list[0].main.temp - 273.15)* 1.8 + 32));
+          setTemp(response.data.list[0].deg);
           setWeather(response.data.list[0].weather[0].description);
           setWeatherIcon(response.data.list[0].weather[0].id);
-        console.log(response.data)
+        console.log("weather", response)
       }).catch(function (error) {
           console.error(error);
       });
@@ -72,7 +89,7 @@ function Weather(props) {
 
     }
 
-    useEffect(() => findWeather(), [])
+    useEffect(() => findWeather(), [city])
     
     return(
         <div className="weather-main">
@@ -80,7 +97,7 @@ function Weather(props) {
             {/* <div className='weather'>
               {content}
             </div> */}
-            <div>Your location is: {city}</div>
+            <div>{findLocation()}</div>
             <div>{temp}° F</div>
             <div className="weather-info">
                 <i className={`owf owf-${weatherIcon}`}></i>
