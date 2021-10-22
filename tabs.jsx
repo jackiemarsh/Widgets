@@ -7,10 +7,10 @@ function Tabs(props)  {
     const tabHeaders = props.tabInfo.map((header, idx) => {
         const activeClass = idx === index ? "active" : ""
         return(
-            <div className="tab-header">   
+            <div className={`tab-header ${activeClass}`}>   
                 <li className={activeClass} key={idx} onClick={() => setIndex(idx)}>
-                    {idx}
-                    :
+                    {/* {idx}
+                    : */}
                     {header.title}
                 </li>
             </div> 
@@ -19,8 +19,8 @@ function Tabs(props)  {
 
     return(
         <div className="main-tabs">
-            <h1>Tabby Tabby</h1>
-            {/* <div className="tab-container"> */}
+            <h1>Click a Tab or Whatever</h1>
+            <div className="tab-outer">
                 <ul className="tab-container">
                     {tabHeaders}
                 </ul>
@@ -29,7 +29,7 @@ function Tabs(props)  {
                        {props.tabInfo[index].content}
                     </span>
                 </div>
-            {/* </div> */}
+            </div>
         </div>
     );
 };

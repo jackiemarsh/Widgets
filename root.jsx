@@ -7,9 +7,10 @@ import Weather from './weather';
 function Root() {
 
   const tabInfo = [
-    {title: "tab 1", content: "something"},
-    {title: "tab 2", content: "other crap"},
-    {title: "tab 3", content: "last shit"}
+    {title: "Clock Probably", content: "something"},
+    {title: "Weather Crap", content: <Weather /> //"other crap"
+  },
+    {title: "look it's a tab", content: "other shit"}
   ];
   
     return (
@@ -17,7 +18,7 @@ function Root() {
         <h1 className="title">My Widgets Project</h1>
         {/* <Clock /> */}
         <Tabs tabInfo={tabInfo}/>
-        <Weather />
+        {/* <Weather /> */}
       </div>
     );
   
