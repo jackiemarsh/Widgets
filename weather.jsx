@@ -14,6 +14,7 @@ const toQueryString = (obj) => {
 function Weather(props) {
 
     const [weather, setWeather] = useState(null)
+    const [weatherIcon, setWeatherIcon] = useState(null)
     const [temp, setTemp] = useState(null)
     const [latitude, setLatitude] = useState(0)
     const [longitude, setLongitude] = useState(0)
@@ -51,6 +52,8 @@ function Weather(props) {
       
       axios.request(options).then(function (response) {
           setTemp(Math.floor((response.data.list[0].main.temp - 273.15)* 1.8 + 32));
+          setWeather(response.data.list[0].weather[0].description);
+          setWeatherIcon(response.data.list[0].weather[0].id);
         console.log(response.data)
       }).catch(function (error) {
           console.error(error);
@@ -80,6 +83,10 @@ function Weather(props) {
             </div> */}
             <div>Your location is: {latitude}, {longitude}</div>
             <div>{temp}° F</div>
+            <div>
+                <div>{weather}</div>
+                <i class={`owf owf-${weatherIcon}`}></i>
+            </div>
       </div>
     );
     
