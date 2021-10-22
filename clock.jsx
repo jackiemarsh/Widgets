@@ -2,23 +2,29 @@ import React, { useEffect, useState } from 'react';
 
 function Clock() {
     
-    const [time, setTime] = useState(new Date())
+    const [seconds, setSeconds] = useState(0)
+    const [timeText, setTimeText] = useState(new Date().toLocaleTimeString())
+   // console.log(timeText)
 
     useEffect( () => {
         var timer = setInterval( () => tick(), 1000);
 
-        return function cleanup() { 
-            clearInterval(timer);
-      }, []; 
-    });
-    
+        return () => clearInterval(timer)
+      }, []); 
+
+    // function reset() {
+    //     setSeconds(0);
+    //     // setIsActive(false);
+    //   }
+
     function tick() {
-        setTime(new Date());
+        setTimeText(new Date().toLocaleTimeString())
     }
 
     return(
         <div>
             <h1>Clock Time</h1>
+            <div>{timeText}</div>
         </div>
     )
 };

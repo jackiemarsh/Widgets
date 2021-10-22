@@ -9,8 +9,6 @@ function Tabs(props)  {
         return(
             <div className={`tab-header ${activeClass}`}>   
                 <li className={activeClass} key={idx} onClick={() => setIndex(idx)}>
-                    {/* {idx}
-                    : */}
                     {header.title}
                 </li>
             </div> 

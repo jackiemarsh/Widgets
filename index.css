@@ -89,6 +89,7 @@ table {
 	padding: 4px;
 	background-color: rgb(240, 238, 238);
 	text-align: center;
+	width: 33.5%;
 }
 
 .tab-container > :first-child {
@@ -108,6 +109,7 @@ table {
 	font-weight: bold;
 	border-bottom: none;
 	background-color: white;
+	box-sizing: border-box;
   }
 
 .tab-header:hover {
@@ -130,11 +132,7 @@ li.active:hover{
 	height: 100%;
 	font-size: 24px;
 }
-/* 
-li {
-	display: flex;
-	justify-content: center;
-} */
+
 .weather-info {
 	display: flex;
 }

@@ -73,7 +73,7 @@ function Weather(props) {
     }
 
     useEffect(() => findWeather(), [])
-    // const temp = (weather.main.temp - 273.15) * 1.8 + 32;
+    
     return(
         <div className="weather-main">
             {/* <h1>Weather</h1> */}
