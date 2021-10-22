@@ -3,13 +3,14 @@ import React from 'react';
 import Clock from './clock';
 import Tabs from './tabs'
 import Weather from './weather';
+import Quote from './quote';
 
 function Root() {
 
   const tabInfo = [
     {title: "Clock Probably", content: <Clock />},
     {title: "Weather Crap", content: <Weather /> },
-    {title: "look it's a tab", content: "other shit"}
+    {title: "look it's a tab", content: <Quote />}
   ];
   
     return (
@@ -17,6 +18,7 @@ function Root() {
         <h1 className="title">My Widgets Project</h1>
         <Tabs tabInfo={tabInfo} />
         {/* <Weather /> */}
+        
       </div>
     );
   
