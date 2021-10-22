@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from "axios";
 
 const toQueryString = (obj) => {
     const parts = [];
@@ -21,7 +22,7 @@ function Weather(props) {
         navigator.geolocation.getCurrentPosition(pos => {
             setLatitude(pos.coords.latitude)
             setLongitude(pos.coords.longitude)
-            console.log(pos)
+            // console.log(pos)
         });
     }
     useEffect(findLocation, [])
@@ -35,30 +36,39 @@ function Weather(props) {
     //     // );
     // }
 
-    const findWeather = (location) => {
-        let url = 'http://api.openweathermap.org/data/2.5/weather?';
-        const params = {
-          lat: location.coords.latitude,
-          lon: location.coords.longitude
-        };
-
-        url += toQueryString(params);
-        const apiKey = 'a41cd0fb11238b932ebc8c60d0c85b87'
-        url += `&APPID=${apiKey}`;
-
-        const xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = () => {
-            if (xmlhttp.status === 200 && xmlhttp.readyState === XMLHttpRequest.DONE) {
-              const data = JSON.parse(xmlhttp.responseText);
-              setWeather({data});
-            }
-        };
-  
-      xmlhttp.open('GET', url, true);
-      xmlhttp.send();
+    const findWeather = () => {
+    //     const apiKey = 'a41cd0fb11238b932ebc8c60d0c85b87'
+    const options = {
+        method: 'GET',
+        url: 'https://community-open-weather-map.p.rapidapi.com/forecast',
+        params: {lat: latitude.toString(), lon: longitude.toString()},
+        headers: {
+          'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
+          'x-rapidapi-key': '6d8b070cf8mshb79c3d891362f1cp18dca4jsn783f72151278'
+        }
+      };
+      
+      axios.request(options).then(function (response) {
+          console.log(response.data);
+      }).catch(function (error) {
+          console.error(error);
+      });
+//         fetch(`https://community-open-weather-map.p.rapidapi.com/forecast?lat=${latitude}&lon=${longitude}`, {
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+// 		"x-rapidapi-key": "6d8b070cf8mshb79c3d891362f1cp18dca4jsn783f72151278"
+// 	}
+// })
+// .then(response => {
+// 	console.log(response);
+// })
+// .catch(err => {
+// 	console.error(err);
+// });
     }
 
-    let content = <div></div>;
+    useEffect(() => findWeather(), [])
     // const temp = (weather.main.temp - 273.15) * 1.8 + 32;
     return(
         <div>
@@ -69,6 +79,7 @@ function Weather(props) {
             <div>Your location is: {latitude}, {longitude}</div>
       </div>
     );
+    
 }
 
 export default Weather;
