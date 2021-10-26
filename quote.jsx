@@ -5,13 +5,14 @@ function Quote() {
 
     const [quote, setQuote] = useState(null)
     const [author, setAuthor] = useState(null)
+    const [language, setLanguage] = useState("en")
     
     function getQuote(e) {
         e.preventDefault();
         const options = {
             method: 'GET',
             url: 'https://quotes15.p.rapidapi.com/quotes/random/',
-            params: {language_code: 'en'},
+            params: {language_code: language},
             headers: {
               'x-rapidapi-host': 'quotes15.p.rapidapi.com',
               'x-rapidapi-key': '6d8b070cf8mshb79c3d891362f1cp18dca4jsn783f72151278'
@@ -29,7 +30,9 @@ function Quote() {
       });
     }
 
-
+    // function changeLanguage(e) {
+    //     setLanguage(e)
+    // }
       
     return(
         <div className="quote-main">
@@ -42,9 +45,9 @@ function Quote() {
             <div className="dropdown">
             <div className="drop-title">Change Language?</div>
             <div className="dropdown-content">
-                <p>English</p>
-                <p>Spanish</p>
-                <p>Portuguese</p>
+                <p onClick={() => setLanguage('en')}>English</p>
+                <p onClick={() => setLanguage('es')}>Spanish</p>
+                <p onClick={() => setLanguage('pt')}>Portuguese</p>
                 <p>Italian</p>
                 <p>German</p>
                 <p>French</p>

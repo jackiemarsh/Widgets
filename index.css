@@ -223,6 +223,10 @@ span {
 	box-sizing: border-box;
 }
 
+.quote {
+	overflow-y: scroll;
+}
+
 .text {
 	width: 90%;
 }
