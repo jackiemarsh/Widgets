@@ -6,6 +6,7 @@ function Quote() {
     const [quote, setQuote] = useState(null)
     const [author, setAuthor] = useState(null)
     const [language, setLanguage] = useState("en")
+    // const [hide, setHide] = useState("")
     
     function getQuote(e) {
         e.preventDefault();
@@ -28,35 +29,47 @@ function Quote() {
       }).catch(function (error) {
           console.error(error);
       });
-    }
+    };
 
-    // function changeLanguage(e) {
-    //     setLanguage(e)
-    // }
+    useEffect( () => {
+        setQuote(quote)
+    }, [language])
+
+    function changeLanguage(e) {
+        setLanguage(e)
+        // close menu
+        // setHide("hide")
+        // re-render useEffect?
+        // shit what else did i want it to do? change what button says maybe
+    }
       
     return(
         <div className="quote-main">
-            <h1>Random Quotes</h1>
-            <button onClick={getQuote} className="quote-button">Click Here</button>
-            <div className="quote-container">
+            <div className="quote-top"> 
+                <div className="quote-button">
+                    <h1>Random Quotes</h1>
+                    <button onClick={getQuote} >Click Here</button>
+                </div>
+                <div className="dropdown">
+                    <div className="drop-title">{language}</div>
+                    <div className={`dropdown-content`}>
+                        <p onClick={() => changeLanguage('en')}>English</p>
+                        <p onClick={() => changeLanguage('es')}>Spanish</p>
+                        <p onClick={() => changeLanguage('pt')}>Portuguese</p>
+                        <p onClick={() => changeLanguage('it')}>Italian</p>
+                        <p onClick={() => changeLanguage('de')}>German</p>
+                        <p onClick={() => changeLanguage('fr')}>French</p>
+                        <p onClick={() => changeLanguage('cs')}>Russian</p>
+                        {/* <p>Czech</p> */}
+                        <p onClick={() => changeLanguage('sk')}>Slovak</p>
+                        {/* <p>Polish</p>
+                        <p>Hungarian</p> */}
+                    </div>
+                </div>
+            </div>
+            <div className="quote-container">   
                 <div className="quote">{quote}</div>
                 <div className="author">{author}</div>
-            </div>
-            <div className="dropdown">
-            <div className="drop-title">Change Language?</div>
-            <div className="dropdown-content">
-                <p onClick={() => setLanguage('en')}>English</p>
-                <p onClick={() => setLanguage('es')}>Spanish</p>
-                <p onClick={() => setLanguage('pt')}>Portuguese</p>
-                <p>Italian</p>
-                <p>German</p>
-                <p>French</p>
-                <p>Russian</p>
-                <p>Czech</p>
-                <p>Slovak</p>
-                <p>Polish</p>
-                <p>Hungarian</p>
-            </div>
             </div>
         </div>
     )

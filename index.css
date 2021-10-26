@@ -47,6 +47,11 @@ table {
 	border-spacing: 0;
 }
 
+h1 {
+	width: fit-content;
+	height: fit-content;
+}
+
 .main-cont {
 	margin: 24px;
 	display: flex;
@@ -203,17 +208,28 @@ span {
 }
 
 .quote-main {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-rows: 33% auto;
 	height: 100%;
 	box-sizing: border-box;
+}
+
+.quote-top {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.quote-button {
+	cursor: pointer;
+	width: 150px;
 }
 
 .quote-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	height: 90%;
+	/* height: 90%; */
 	/* margin: 12px; */
 	box-sizing: border-box;
 }
@@ -221,6 +237,8 @@ span {
 .quote-container > * {
 	font-size: 80%;
 	box-sizing: border-box;
+	padding: 8px;
+	/* overflow-y: scroll; */
 }
 
 .quote {
@@ -231,28 +249,24 @@ span {
 	width: 90%;
 }
 
-.quote-button {
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+	align-self: flex-start;
 	cursor: pointer;
-	width: 30%;
-	margin: 8px;
 }
 
 .drop-title {
-	background-color: #4CAF50;
-	color: white;
-	padding: 16px;
+	/* background-color: #4CAF50; */
+	color: rgb(0, 47, 255);
+	padding: 0 4px 4px 4px;
 	font-size: 18px;
 	width: fit-content;
 	border: none;
-	cursor: pointer;
+	/* cursor: pointer; */
   }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-	position: relative;
-	display: inline-block;
-  }
-  
+
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
 	display: none;
@@ -261,6 +275,8 @@ span {
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
+	height: 100px;
+	overflow-y: scroll;
   }
   
   /* Links inside the dropdown */
@@ -273,7 +289,9 @@ span {
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content p:hover {background-color: #f1f1f1}
+  .dropdown-content p:hover {
+	  background-color: #f1f1f1
+	}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
@@ -282,5 +300,9 @@ span {
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .drop-title {
-	background-color: #3e8e41;
+	background-color: #f1f1f1;
   }
+
+  /* .hide {
+	  display: none;
+  } */
