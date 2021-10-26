@@ -28,6 +28,8 @@ function Quote() {
           console.error(error);
       });
     }
+
+
       
     return(
         <div className="quote-main">
@@ -36,6 +38,22 @@ function Quote() {
             <div className="quote-container">
                 <div className="quote">{quote}</div>
                 <div className="author">{author}</div>
+            </div>
+            <div className="dropdown">
+            <div className="drop-title">Change Language?</div>
+            <div className="dropdown-content">
+                <p>English</p>
+                <p>Spanish</p>
+                <p>Portuguese</p>
+                <p>Italian</p>
+                <p>German</p>
+                <p>French</p>
+                <p>Russian</p>
+                <p>Czech</p>
+                <p>Slovak</p>
+                <p>Polish</p>
+                <p>Hungarian</p>
+            </div>
             </div>
         </div>
     )
