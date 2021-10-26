@@ -132,7 +132,7 @@ li.active:hover{
 .tab-content {
 	display: flex;
 	flex-direction: column;
-	padding: 36px;
+	padding: 4%;
 	border: solid 1px darkgray;
 	border-radius: 0 0 8px 8px;
 	border-top: 0;
@@ -209,7 +209,8 @@ span {
 
 .quote-main {
 	display: grid;
-	grid-template-rows: 25% 75%;
+	grid-template-rows: 23% 73%;
+	grid-row-gap: 4%;
 	height: 100%;
 	box-sizing: border-box;
 }
@@ -263,7 +264,6 @@ span {
 }
 
 .drop-title {
-	/* background-color: #4CAF50; */
 	color: rgb(0, 47, 255);
 	padding: 0 4px 4px 4px;
 	font-size: 18px;
@@ -307,7 +307,3 @@ span {
   .dropdown:hover .drop-title {
 	background-color: #f1f1f1;
   }
-
-  /* .hide {
-	  display: none;
-  } */

@@ -38,7 +38,6 @@ function Quote() {
     function changeLanguage(e) {
         setLanguage(e)
         // close menu
-        // setHide("hide")
         // re-render useEffect?
         // shit what else did i want it to do? change what button says maybe
     }
