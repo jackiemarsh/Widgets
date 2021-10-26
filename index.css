@@ -274,7 +274,7 @@ span {
 
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
-	display: none;
+	/* display: none; */
 	position: absolute;
 	background-color: #f9f9f9;
 	min-width: 160px;
@@ -299,11 +299,15 @@ span {
 	}
   
   /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
+  /* .dropdown:hover .dropdown-content {
 	display: block;
-  }
+  } */
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .drop-title {
 	background-color: #f1f1f1;
+  }
+
+  .hide {
+	  display: none
   }
