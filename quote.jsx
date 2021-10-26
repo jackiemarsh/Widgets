@@ -38,11 +38,21 @@ function Quote() {
     function changeLanguage(e) {
         setLanguage(e)
         setReveal(false)
-        // close menu
         // re-render useEffect?
         // shit what else did i want it to do? change what button says? maybe
     }
       
+    const languages = {
+        'en': "English",
+        'es': "Spanish",
+        'pt': "Portuguese",
+        'it': "Italian",
+        'de': "German",
+        'fr': "French",
+        'cs': "Russian",
+        'sk': "Slovak"
+    }
+
     return(
         <div className="quote-main">
             <div className="quote-top"> 
@@ -51,7 +61,7 @@ function Quote() {
                     <button onClick={getQuote} >Click Here</button>
                 </div>
                 <div className="dropdown">
-                    <div onMouseEnter={() => setReveal(true)} className="drop-title">{language}</div>
+                    <div onMouseEnter={() => setReveal(true)} className="drop-title">{languages[language]}</div>
                     {reveal && (
                     <div className={`dropdown-content `}>
                         <p onClick={() => changeLanguage('en')}>English</p>
