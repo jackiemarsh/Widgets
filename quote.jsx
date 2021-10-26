@@ -22,7 +22,7 @@ function Quote() {
       axios.request(options).then(function (response) {
           console.log(response.data);
           setQuote(response.data.content)
-          setAuthor(response.data.originator.name)
+          setAuthor(`- ${response.data.originator.name}`)
           console.log(quote)
       }).catch(function (error) {
           console.error(error);
@@ -35,7 +35,7 @@ function Quote() {
             <button onClick={getQuote} className="quote-button">Click Here</button>
             <div className="quote-container">
                 <div className="quote">{quote}</div>
-                <div className="author">- {author}</div>
+                <div className="author">{author}</div>
             </div>
         </div>
     )
