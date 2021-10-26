@@ -209,7 +209,7 @@ span {
 
 .quote-main {
 	display: grid;
-	grid-template-rows: 33% auto;
+	grid-template-rows: 25% 75%;
 	height: 100%;
 	box-sizing: border-box;
 }
@@ -222,7 +222,12 @@ span {
 
 .quote-button {
 	cursor: pointer;
-	width: 150px;
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
 }
 
 .quote-container {
