@@ -254,7 +254,7 @@ span {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/* height: 90%; */
+	height: 100%;
 	/* margin: 12px; */
 	box-sizing: border-box;
 }
