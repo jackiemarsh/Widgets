@@ -218,7 +218,7 @@ span {
 	border-radius: 5px;
 	padding: 12px;
 	margin: 18px;
-	width: 155px;
+	width: fit-content;
 	font-family: 'Orbitron', sans-serif;
 }
 
