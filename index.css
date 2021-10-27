@@ -147,9 +147,9 @@ li.active:hover{
 }
 
 .weather-main {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+	/* display: flex;
+	flex-direction: column; */
+	/* justify-content: space-around; */
 	height: 100%;
 }
 
@@ -190,6 +190,17 @@ span {
 .weather-text {
 	font-size: 28px;
 	align-self: flex-end;
+}
+
+.weather-lower {
+	justify-self: center;
+	display: flex;
+	justify-content: space-evenly;
+	width: 80%;
+}
+
+.location {
+	justify-self: flex-start;
 }
 
 .clock-main {
