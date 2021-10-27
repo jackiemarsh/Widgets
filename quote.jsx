@@ -63,7 +63,7 @@ function Quote() {
                 <div className="dropdown">
                     <div onMouseEnter={() => setReveal(true)} className="drop-title">{languages[language]}</div>
                     {reveal && (
-                    <div className={`dropdown-content `}>
+                    <div className={`dropdown-content `} onMouseLeave={() => setReveal(false)}>
                         <p onClick={() => changeLanguage('en')}>English</p>
                         <p onClick={() => changeLanguage('es')}>Spanish</p>
                         <p onClick={() => changeLanguage('pt')}>Portuguese</p>

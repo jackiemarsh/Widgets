@@ -65,7 +65,7 @@ function Weather(props) {
       url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
       params: {
         q: `${city}`,
-        // q: `Wilsonville`,
+        // q: 'Wilsonville',
         lat: `${latitude}`,
         lon: `${longitude}`,
         cnt: '4',
@@ -78,11 +78,11 @@ function Weather(props) {
     };
       
       axios.request(options).then(function (response) {
-        if (response.data.list[0].deg < 100 && response.data.city.timezone == -36000) {
-          setTemp(response.data.list[0].deg)
-        } else {
-          setTemp(Math.floor((response.data.list[0].deg - 273.15)* 1.8 + 32))
-        };
+        // if (response.data.list[0].deg < 100 && response.data.city.timezone == -36000) {
+          setTemp(Math.floor(response.data.list[0].feels_like.day))
+        // } else {
+        //   setTemp(Math.floor((response.data.list[0].feels_like.day - 273.15)* 1.8 + 32))
+        // };
           setWeather(response.data.list[0].weather[0].description);
           setWeatherIcon(response.data.list[0].weather[0].id);
         console.log("weather", response)
