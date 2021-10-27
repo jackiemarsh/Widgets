@@ -2586,7 +2586,7 @@ function Weather(props) {
     }
   };
 
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(findLocation, [index]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(findLocation, []);
 
   var findWeather = function findWeather() {
     //     const apiKey = 'a41cd0fb11238b932ebc8c60d0c85b87'

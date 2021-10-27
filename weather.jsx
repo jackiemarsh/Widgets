@@ -56,7 +56,7 @@ function Weather(props) {
         }
     };
 
-    useEffect(findLocation, [index])
+    useEffect(findLocation, [])
 
 
     const findWeather = () => {
