@@ -79,9 +79,11 @@ function Quote() {
                     )}
                 </div>
             </div>
-            <div className="quote-container">   
-                <div className="quote">{quote}</div>
-                <div className="author">{author}</div>
+            <div>   
+                <div className="quote-container">
+                    <div className="quote">{quote}</div>
+                    <div className="author">{author}</div>
+                </div>
             </div>
         </div>
     )

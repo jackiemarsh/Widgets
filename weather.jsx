@@ -149,9 +149,9 @@ function Weather(props) {
                 </div>
               </div>
               <div className="weather-lower-right"> 
-                <div className="forecast">
+                {/* <div className="forecast">
                   <h3 onClick={() => findForecast("tomorrow")}>forecast?</h3>
-                </div>
+                </div> */}
               </div>
             </div>
       </div>

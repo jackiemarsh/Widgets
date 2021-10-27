@@ -17,7 +17,7 @@ function Tabs(props)  {
 
     return(
         <div className="main-tabs">
-            <h1>Click a Tab or Whatever</h1>
+            {/* <h1>Click a Tab or Whatever</h1> */}
             <div className="tab-outer">
                 <ul className="tab-container">
                     {tabHeaders}
