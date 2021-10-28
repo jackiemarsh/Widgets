@@ -141,13 +141,14 @@ function Weather(props) {
         <div className="weather-main">
             <div className="location">{findLocation()}</div>
             <div className="weather-lower"> 
+            {weather ? 
               <div className="weather-lower-left"> 
                 <div>{temp}</div>
                 <div className="weather-info">
                     <i className={`owf owf-${weatherIcon}`}></i>
                     <div className="weather-text">{weather}</div>
                 </div>
-              </div>
+              </div> : null }
               <div className="weather-lower-right"> 
                 {/* <div className="forecast">
                   <h3 onClick={() => findForecast("tomorrow")}>forecast?</h3>

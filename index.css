@@ -203,6 +203,14 @@ span {
 	width: 80%;
 }
 
+.weather-lower-left {
+	border: 2px darkgray dotted;
+	border-radius: 8px;
+	height: fit-content;
+	width: fit-content;
+	padding: 8%;
+}
+
 .location {
 	justify-self: flex-start;
 }
