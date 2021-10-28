@@ -2622,61 +2622,74 @@ function Weather(props) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     return findWeather();
-  }, [city]);
-
-  var findForecast = function findForecast(day) {
-    //     const apiKey = 'a41cd0fb11238b932ebc8c60d0c85b87'
-    var options = {
-      method: 'GET',
-      url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
-      params: {
-        q: "".concat(city),
-        // q: 'Wilsonville',
-        lat: "".concat(latitude),
-        lon: "".concat(longitude),
-        cnt: '4',
-        units: 'imperial'
-      },
-      headers: {
-        'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
-        'x-rapidapi-key': '6d8b070cf8mshb79c3d891362f1cp18dca4jsn783f72151278'
-      }
-    };
-    axios__WEBPACK_IMPORTED_MODULE_1___default().request(options).then(function (response) {
-      // if (response.data.list[0].deg < 100 && response.data.city.timezone == -36000) {
-      setTemp("".concat(Math.floor(response.data.list[0].feels_like.day), " \xB0 F")); // } else {
-      //   setTemp(Math.floor((response.data.list[0].feels_like.day - 273.15)* 1.8 + 32))
-      // };
-
-      setForecast(response.data); // console.log("weather", response)
-    })["catch"](function (error) {
-      console.error(error);
-    });
-
-    if (day === "tomorrow") {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, forecast.list[1].weather[1].description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "".concat(Math.floor(forecast.list[1].feels_like.day), " \xB0 F")));
-    }
-
-    ;
-  };
+  }, [city]); // const findForecast = () => {
+  //   //     const apiKey = 'a41cd0fb11238b932ebc8c60d0c85b87'
+  //   const options = {
+  //     method: 'GET',
+  //     url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
+  //     params: {
+  //       q: `${city}`,
+  //       // q: 'Wilsonville',
+  //       lat: `${latitude}`,
+  //       lon: `${longitude}`,
+  //       cnt: '4',
+  //       units: 'imperial'
+  //     },
+  //     headers: {
+  //       'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
+  //       'x-rapidapi-key': '6d8b070cf8mshb79c3d891362f1cp18dca4jsn783f72151278'
+  //     }
+  //   };
+  //     axios.request(options).then(function (response) {
+  //         setTemp(`${Math.floor(response.data.list[0].feels_like.day)} ° F`)
+  //         setForecast(response.data);
+  //       console.log("forecast", response.data.list[1].weather[0].description)
+  //     }).catch(function (error) {
+  //         console.error(error);
+  //     });
+  //     return(
+  //     <div className="forecast">
+  //       <div className="forecast-nav"> 
+  //         <a href="#slide-1">1</a>
+  //         <a href="#slide-2">2</a>
+  //         <a href="#slide-3">3</a>
+  //       </div>
+  //       <div className="slides">
+  //         <div id="slide-1">
+  //           Tomorrow
+  //         </div>
+  //         <div id="slide-2">
+  //           Next Day
+  //         </div>
+  //         <div id="slide-3">
+  //           3 days
+  //         </div>
+  //       </div>
+  //     </div>
+  //     )
+  // };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "location"
-  }, findLocation()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, findLocation()), weather ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-lower"
-  }, weather ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-lower-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "weather-lower-content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, temp), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-info"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
     className: "owf owf-".concat(weatherIcon)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-text"
-  }, weather))) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, weather)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-lower-right"
-  })));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "weather-lower-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "3-day forecast")))) : null);
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Weather);

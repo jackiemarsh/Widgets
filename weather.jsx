@@ -94,67 +94,79 @@ function Weather(props) {
 
     useEffect(() => findWeather(), [city])
     
-    const findForecast = (day) => {
-      //     const apiKey = 'a41cd0fb11238b932ebc8c60d0c85b87'
-      const options = {
-        method: 'GET',
-        url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
-        params: {
-          q: `${city}`,
-          // q: 'Wilsonville',
-          lat: `${latitude}`,
-          lon: `${longitude}`,
-          cnt: '4',
-          units: 'imperial'
-        },
-        headers: {
-          'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
-          'x-rapidapi-key': '6d8b070cf8mshb79c3d891362f1cp18dca4jsn783f72151278'
-        }
-      };
+    // const findForecast = () => {
+    //   //     const apiKey = 'a41cd0fb11238b932ebc8c60d0c85b87'
+    //   const options = {
+    //     method: 'GET',
+    //     url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
+    //     params: {
+    //       q: `${city}`,
+    //       // q: 'Wilsonville',
+    //       lat: `${latitude}`,
+    //       lon: `${longitude}`,
+    //       cnt: '4',
+    //       units: 'imperial'
+    //     },
+    //     headers: {
+    //       'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
+    //       'x-rapidapi-key': '6d8b070cf8mshb79c3d891362f1cp18dca4jsn783f72151278'
+    //     }
+    //   };
         
-        axios.request(options).then(function (response) {
-          // if (response.data.list[0].deg < 100 && response.data.city.timezone == -36000) {
-            setTemp(`${Math.floor(response.data.list[0].feels_like.day)} ° F`)
-          // } else {
-          //   setTemp(Math.floor((response.data.list[0].feels_like.day - 273.15)* 1.8 + 32))
-          // };
-            setForecast(response.data);
-            
-          // console.log("weather", response)
-        }).catch(function (error) {
-            console.error(error);
-        });
+    //     axios.request(options).then(function (response) {
+    //         setTemp(`${Math.floor(response.data.list[0].feels_like.day)} ° F`)
 
-        if (day === "tomorrow") {
-          return(
-            <div>
-              <div>{forecast.list[1].weather[1].description}</div>
-              <div>{`${Math.floor(forecast.list[1].feels_like.day)} ° F`}</div>
-              {/* <div>{forecast.list[1].feels_like.day}</div> */}
-            </div>
-          )
-        };
-      };
+    //         setForecast(response.data);
+            
+    //       console.log("forecast", response.data.list[1].weather[0].description)
+    //     }).catch(function (error) {
+    //         console.error(error);
+    //     });
+
+    //     return(
+    //     <div className="forecast">
+    //       <div className="forecast-nav"> 
+    //         <a href="#slide-1">1</a>
+    //         <a href="#slide-2">2</a>
+    //         <a href="#slide-3">3</a>
+    //       </div>
+
+    //       <div className="slides">
+    //         <div id="slide-1">
+    //           Tomorrow
+    //         </div>
+    //         <div id="slide-2">
+    //           Next Day
+    //         </div>
+    //         <div id="slide-3">
+    //           3 days
+    //         </div>
+    //       </div>
+    //     </div>
+    //     )
+    // };
 
     return(
         <div className="weather-main">
             <div className="location">{findLocation()}</div>
-            <div className="weather-lower"> 
             {weather ? 
+            <div className="weather-lower"> 
               <div className="weather-lower-left"> 
-                <div>{temp}</div>
-                <div className="weather-info">
-                    <i className={`owf owf-${weatherIcon}`}></i>
-                    <div className="weather-text">{weather}</div>
+                <div className="weather-lower-content">
+                  <div>{temp}</div>
+                  <div className="weather-info">
+                      <i className={`owf owf-${weatherIcon}`}></i>
+                      <div className="weather-text">{weather}</div>
+                  </div>
                 </div>
-              </div> : null }
+              </div> 
               <div className="weather-lower-right"> 
-                {/* <div className="forecast">
-                  <h3 onClick={() => findForecast("tomorrow")}>forecast?</h3>
-                </div> */}
-              </div>
-            </div>
+                <div className="weather-lower-content">
+                  <div>3-day forecast</div>
+                  {/* include lower right in conditional, also forecast button that grabs info on click  */}
+                </div>
+              </div> 
+            </div> : null }
       </div>
     );
     
