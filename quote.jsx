@@ -60,10 +60,10 @@ function Quote() {
                     <h1>Random Quotes</h1>
                     <button onClick={getQuote} >Click Here</button>
                 </div>
-                <div className="dropdown">
-                    <div onMouseEnter={() => setReveal(true)} className="drop-title">{languages[language]}</div>
+                <div className="dropdown" onMouseEnter={() => setReveal(true)} onMouseLeave={() => setReveal(false)} >
+                    <div className="drop-title">{languages[language]}</div>
                     {reveal && (
-                    <div className={`dropdown-content `} onMouseLeave={() => setReveal(false)}>
+                    <div className={`dropdown-content `} >
                         <p onClick={() => changeLanguage('en')}>English</p>
                         <p onClick={() => changeLanguage('es')}>Spanish</p>
                         <p onClick={() => changeLanguage('pt')}>Portuguese</p>
