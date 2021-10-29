@@ -15,7 +15,7 @@ function Weather(props) {
 
     const [weather, setWeather] = useState(null)
     const [forecast, setForecast] = useState(null)
-    const [active, setActive] = useState(false)
+    const [active, setActive] = useState(true)
     const [latitude, setLatitude] = useState(0)
     const [longitude, setLongitude] = useState(0)
     const [city, setCity] = useState(null)
@@ -93,36 +93,12 @@ function Weather(props) {
 
     useEffect(() => findWeather(), [city])
     console.log("weather2", weather)
+    console.log("active out", active)
 
-    // const findForecast = () => {
-
-    //   setActive(true)
-
-    //     return(
-    //     <div className="forecast">
-    //       <div onClick={setActive(false)}>today</div>
-    //       <div className="forecast-nav"> 
-    //         <a href="#slide-1">1</a>
-    //         <a href="#slide-2">2</a>
-    //         <a href="#slide-3">3</a>
-    //       </div>
-
-    //       <div className="slides">
-    //         <div id="slide-1">
-    //           {/* <div className="weather-temp">{`${Math.floor(weather.list[1].feels_like.day)} ° F`}</div>
-    //           <i className={`owf owf-${weather.list[1].weather[0].id}`}></i>
-    //           <div className="weather-text">{weather.list[1].weather[0].description}</div> */}
-    //         </div>
-    //         <div id="slide-2">
-    //           Next Day
-    //         </div>
-    //         <div id="slide-3">
-    //           3 days
-    //         </div>
-    //       </div>
-    //     </div>
-    //     )
-    // };
+    function toggleScreen() {
+      setActive(active => !active);
+      console.log("active?", active)
+    }
 
     return(
         <div className="weather-main">
@@ -141,31 +117,34 @@ function Weather(props) {
               </div> 
               <div className="weather-lower-right"> 
                 <div className="weather-lower-content">
-                  <div onClick={()=> setActive(true)}>3-day forecast</div>
+                  <div onClick={() => toggleScreen()}>3-day forecast</div>
                   {/* include lower right in conditional, also forecast button that grabs info on click  */}
                 </div>
               </div> 
             </div> 
             :  
-            <div className="forecast">
-              {/* <div onClick={setActive(false)}>today</div> */}
-              <div className="forecast-nav"> 
-                <a href="#slide-1">1</a>
-                <a href="#slide-2">2</a>
-                <a href="#slide-3">3</a>
-              </div>
-  
-              <div className="slides">
-                <div id="slide-1">
-                  {/* <div className="weather-temp">{`${Math.floor(weather.list[1].feels_like.day)} ° F`}</div>
-                  <i className={`owf owf-${weather.list[1].weather[0].id}`}></i>
-                  <div className="weather-text">{weather.list[1].weather[0].description}</div> */}
+            <div className="weather-lower"> 
+              <div className="forecast">
+                <div onClick={() => toggleScreen()}>today</div>
+                <div className="forecast-nav"> 
+                  <a href="#slide-1">1</a>
+                  <a href="#slide-2">2</a>
+                  <a href="#slide-3">3</a>
                 </div>
-                <div id="slide-2">
-                  {/* Next Day */}
-                </div>
-                <div id="slide-3">
-                  {/* 3 days */}
+              
+                <div className="slides">
+                  <div id="slide-1">
+                    {/* <div className="weather-temp">{`${Math.floor(weather.list[1].feels_like.day)} ° F`}</div>
+                    <i className={`owf owf-${weather.list[1].weather[0].id}`}></i>
+                    <div className="weather-text">{weather.list[1].weather[0].description}</div> */}
+                    Tomorrow
+                  </div>
+                  <div id="slide-2">
+                    Next Day
+                  </div>
+                  <div id="slide-3">
+                    3 days
+                  </div>
                 </div>
               </div>
           </div>

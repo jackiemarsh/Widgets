@@ -2525,7 +2525,7 @@ function Weather(props) {
       forecast = _useState4[0],
       setForecast = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
       _useState6 = _slicedToArray(_useState5, 2),
       active = _useState6[0],
       setActive = _useState6[1];
@@ -2614,32 +2614,15 @@ function Weather(props) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     return findWeather();
   }, [city]);
-  console.log("weather2", weather); // const findForecast = () => {
-  //   setActive(true)
-  //     return(
-  //     <div className="forecast">
-  //       <div onClick={setActive(false)}>today</div>
-  //       <div className="forecast-nav"> 
-  //         <a href="#slide-1">1</a>
-  //         <a href="#slide-2">2</a>
-  //         <a href="#slide-3">3</a>
-  //       </div>
-  //       <div className="slides">
-  //         <div id="slide-1">
-  //           {/* <div className="weather-temp">{`${Math.floor(weather.list[1].feels_like.day)} ° F`}</div>
-  //           <i className={`owf owf-${weather.list[1].weather[0].id}`}></i>
-  //           <div className="weather-text">{weather.list[1].weather[0].description}</div> */}
-  //         </div>
-  //         <div id="slide-2">
-  //           Next Day
-  //         </div>
-  //         <div id="slide-3">
-  //           3 days
-  //         </div>
-  //       </div>
-  //     </div>
-  //     )
-  // };
+  console.log("weather2", weather);
+  console.log("active out", active);
+
+  function toggleScreen() {
+    setActive(function (active) {
+      return !active;
+    });
+    console.log("active?", active);
+  }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-main"
@@ -2665,11 +2648,17 @@ function Weather(props) {
     className: "weather-lower-content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     onClick: function onClick() {
-      return setActive(true);
+      return toggleScreen();
     }
   }, "3-day forecast")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "weather-lower"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "forecast"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    onClick: function onClick() {
+      return toggleScreen();
+    }
+  }, "today"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "forecast-nav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "#slide-1"
@@ -2681,11 +2670,11 @@ function Weather(props) {
     className: "slides"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "slide-1"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "Tomorrow"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "slide-2"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "Next Day"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "slide-3"
-  }))) : null);
+  }, "3 days")))) : null);
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Weather);
