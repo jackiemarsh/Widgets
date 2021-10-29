@@ -2651,7 +2651,7 @@ function Weather(props) {
       return toggleScreen();
     }
   }, "3-day forecast")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "weather-lower"
+    className: "forecast-lower"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "forecast"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

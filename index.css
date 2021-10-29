@@ -201,6 +201,13 @@ span {
 	width: 90%;
 }
 
+.forecast-lower {
+	justify-self: center;
+	display: flex;
+	justify-content: center;
+	width: 90%;
+}
+
 .weather-lower-left {
 	border: 2px darkgray dotted;
 	border-radius: 8px;
@@ -218,7 +225,7 @@ span {
 
 /* weather forecast slides */
 .forecast {
-	width: 200px;
+	width: 300px;
 	text-align: center;
 	overflow: hidden;
 	display: flex;

@@ -123,7 +123,7 @@ function Weather(props) {
               </div> 
             </div> 
             :  
-            <div className="weather-lower"> 
+            <div className="forecast-lower"> 
               <div className="forecast">
                 <div onClick={() => toggleScreen()}>today</div>
                 <div className="forecast-nav"> 
