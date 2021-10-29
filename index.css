@@ -206,6 +206,15 @@ span {
 	display: flex;
 	justify-content: center;
 	width: 90%;
+	position: relative;
+}
+
+.forecast-lower-top {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 8px;
 }
 
 .weather-lower-left {
@@ -214,6 +223,10 @@ span {
 	height: fit-content;
 	width: fit-content;
 	padding: 8%;
+}
+
+.weather-lower-right {
+	position: relative;
 }
 
 .weather-lower-content {
@@ -226,13 +239,26 @@ span {
 /* weather forecast slides */
 .forecast {
 	width: 300px;
-	text-align: center;
+	/* text-align: center; */
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-evenly;
   }
   
+  .weather-button {
+	color: blue;
+	align-self: flex-end;
+	position: absolute;
+	top: 2%;
+	right: 2%;
+  }
+
+  .weather-button:hover {
+	cursor: pointer;
+  }
+
 .slides {
 	display: flex;
 	

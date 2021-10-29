@@ -15,7 +15,7 @@ function Weather(props) {
 
     const [weather, setWeather] = useState(null)
     const [forecast, setForecast] = useState(null)
-    const [active, setActive] = useState(true)
+    const [active, setActive] = useState(false)
     const [latitude, setLatitude] = useState(0)
     const [longitude, setLongitude] = useState(0)
     const [city, setCity] = useState(null)
@@ -116,8 +116,8 @@ function Weather(props) {
                 </div>
               </div> 
               <div className="weather-lower-right"> 
+                  <div className="weather-button" onClick={() => toggleScreen()}>3-day forecast</div>
                 <div className="weather-lower-content">
-                  <div onClick={() => toggleScreen()}>3-day forecast</div>
                   {/* include lower right in conditional, also forecast button that grabs info on click  */}
                 </div>
               </div> 
@@ -125,13 +125,15 @@ function Weather(props) {
             :  
             <div className="forecast-lower"> 
               <div className="forecast">
-                <div onClick={() => toggleScreen()}>today</div>
-                <div className="forecast-nav"> 
-                  <a href="#slide-1">1</a>
-                  <a href="#slide-2">2</a>
-                  <a href="#slide-3">3</a>
+                  <div className="weather-button" onClick={() => toggleScreen()}>today</div>
+                <div className="forecast-lower-top"> 
+                  <div className="forecast-nav"> 
+                    <a href="#slide-1">1</a>
+                    <a href="#slide-2">2</a>
+                    <a href="#slide-3">3</a>
+                  </div>
                 </div>
-              
+
                 <div className="slides">
                   <div id="slide-1">
                     {/* <div className="weather-temp">{`${Math.floor(weather.list[1].feels_like.day)} ° F`}</div>
