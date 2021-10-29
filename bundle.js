@@ -2525,37 +2525,31 @@ function Weather(props) {
       forecast = _useState4[0],
       setForecast = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState6 = _slicedToArray(_useState5, 2),
-      weatherIcon = _useState6[0],
-      setWeatherIcon = _useState6[1];
+      active = _useState6[0],
+      setActive = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState8 = _slicedToArray(_useState7, 2),
-      temp = _useState8[0],
-      setTemp = _useState8[1];
+      latitude = _useState8[0],
+      setLatitude = _useState8[1];
 
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState10 = _slicedToArray(_useState9, 2),
-      latitude = _useState10[0],
-      setLatitude = _useState10[1];
+      longitude = _useState10[0],
+      setLongitude = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState12 = _slicedToArray(_useState11, 2),
-      longitude = _useState12[0],
-      setLongitude = _useState12[1];
-
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-      _useState14 = _slicedToArray(_useState13, 2),
-      city = _useState14[0],
-      setCity = _useState14[1]; // my api key: a41cd0fb11238b932ebc8c60d0c85b87
+      city = _useState12[0],
+      setCity = _useState12[1]; // my api key: a41cd0fb11238b932ebc8c60d0c85b87
 
 
   var findLocation = function findLocation() {
     navigator.geolocation.getCurrentPosition(function (pos) {
       setLatitude(pos.coords.latitude);
-      setLongitude(pos.coords.longitude); // console.log(pos)
-
+      setLongitude(pos.coords.longitude);
       var options = {
         method: 'GET',
         url: 'https://geocodeapi.p.rapidapi.com/GetNearestCities',
@@ -2582,7 +2576,7 @@ function Weather(props) {
         className: "loading"
       }, "Locating you");
     } else {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, "Your location is: ", city);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, "Your location is: ", city));
     }
   };
 
@@ -2607,14 +2601,11 @@ function Weather(props) {
       }
     };
     axios__WEBPACK_IMPORTED_MODULE_1___default().request(options).then(function (response) {
-      // if (response.data.list[0].deg < 100 && response.data.city.timezone == -36000) {
-      setTemp("".concat(Math.floor(response.data.list[0].feels_like.day), " \xB0 F")); // } else {
-      //   setTemp(Math.floor((response.data.list[0].feels_like.day - 273.15)* 1.8 + 32))
-      // };
+      // setTemp(`${Math.floor(response.data.list[0].feels_like.day)} ° F`)
+      // setWeather(response.data.list[0].weather[0].description);
+      setWeather(response.data); // setWeatherIcon(response.data.list[0].weather[0].id);
 
-      setWeather(response.data.list[0].weather[0].description);
-      setWeatherIcon(response.data.list[0].weather[0].id);
-      console.log("weather", response);
+      console.log("weather", response.data);
     })["catch"](function (error) {
       console.error(error);
     });
@@ -2622,33 +2613,12 @@ function Weather(props) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     return findWeather();
-  }, [city]); // const findForecast = () => {
-  //   //     const apiKey = 'a41cd0fb11238b932ebc8c60d0c85b87'
-  //   const options = {
-  //     method: 'GET',
-  //     url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
-  //     params: {
-  //       q: `${city}`,
-  //       // q: 'Wilsonville',
-  //       lat: `${latitude}`,
-  //       lon: `${longitude}`,
-  //       cnt: '4',
-  //       units: 'imperial'
-  //     },
-  //     headers: {
-  //       'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
-  //       'x-rapidapi-key': '6d8b070cf8mshb79c3d891362f1cp18dca4jsn783f72151278'
-  //     }
-  //   };
-  //     axios.request(options).then(function (response) {
-  //         setTemp(`${Math.floor(response.data.list[0].feels_like.day)} ° F`)
-  //         setForecast(response.data);
-  //       console.log("forecast", response.data.list[1].weather[0].description)
-  //     }).catch(function (error) {
-  //         console.error(error);
-  //     });
+  }, [city]);
+  console.log("weather2", weather); // const findForecast = () => {
+  //   setActive(true)
   //     return(
   //     <div className="forecast">
+  //       <div onClick={setActive(false)}>today</div>
   //       <div className="forecast-nav"> 
   //         <a href="#slide-1">1</a>
   //         <a href="#slide-2">2</a>
@@ -2656,7 +2626,9 @@ function Weather(props) {
   //       </div>
   //       <div className="slides">
   //         <div id="slide-1">
-  //           Tomorrow
+  //           {/* <div className="weather-temp">{`${Math.floor(weather.list[1].feels_like.day)} ° F`}</div>
+  //           <i className={`owf owf-${weather.list[1].weather[0].id}`}></i>
+  //           <div className="weather-text">{weather.list[1].weather[0].description}</div> */}
   //         </div>
   //         <div id="slide-2">
   //           Next Day
@@ -2673,23 +2645,47 @@ function Weather(props) {
     className: "weather-main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "location"
-  }, findLocation()), weather ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, findLocation()), weather ? active === false ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-lower"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-lower-left"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-lower-content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, temp), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "weather-temp"
+  }, "".concat(Math.floor(weather.list[0].feels_like.day), " \xB0 F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-info"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
-    className: "owf owf-".concat(weatherIcon)
+    className: "owf owf-".concat(weather.list[0].weather[0].id)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-text"
-  }, weather)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, weather.list[0].weather[0].description)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-lower-right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-lower-content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "3-day forecast")))) : null);
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    onClick: function onClick() {
+      return setActive(true);
+    }
+  }, "3-day forecast")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "forecast"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "forecast-nav"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "#slide-1"
+  }, "1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "#slide-2"
+  }, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "#slide-3"
+  }, "3")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "slides"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "slide-1"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "slide-2"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "slide-3"
+  }))) : null);
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Weather);
