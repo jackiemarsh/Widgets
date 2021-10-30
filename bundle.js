@@ -2735,13 +2735,13 @@ function Weather(props) {
     className: "slide-content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-temp"
-  }, "".concat(Math.floor(weather.list[2].feels_like.day), " \xB0 F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "".concat(Math.floor(weather.list[3].feels_like.day), " \xB0 F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-info"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
-    className: "owf owf-".concat(weather.list[2].weather[0].id)
+    className: "owf owf-".concat(weather.list[3].weather[0].id)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-text"
-  }, weather.list[2].weather[0].description))))))) : null);
+  }, weather.list[3].weather[0].description))))))) : null);
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Weather);

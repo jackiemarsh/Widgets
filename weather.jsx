@@ -182,10 +182,10 @@ function currentSlide(e) {
                   {/* slide 3 */}
                   <div className="slides fade" >
                     <div className="slide-content" >
-                      <div className="weather-temp">{`${Math.floor(weather.list[2].feels_like.day)} ° F`}</div>
+                      <div className="weather-temp">{`${Math.floor(weather.list[3].feels_like.day)} ° F`}</div>
                       <div className="weather-info">
-                        <i className={`owf owf-${weather.list[2].weather[0].id}`}></i>
-                        <div className="weather-text">{weather.list[2].weather[0].description}</div>
+                        <i className={`owf owf-${weather.list[3].weather[0].id}`}></i>
+                        <div className="weather-text">{weather.list[3].weather[0].description}</div>
                         {/* 3 days */}
                       </div>
                     </div>
