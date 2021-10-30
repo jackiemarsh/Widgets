@@ -139,8 +139,8 @@ function currentSlide(e) {
             </div> 
             :  
             <div className="forecast-lower"> 
-              <div className="forecast">
                   <div className="weather-button" onClick={() => toggleScreen()}>today</div>
+              <div className="forecast">
                 <div className="forecast-lower-top"> 
                   <div className="forecast-nav"> 
                     <a className="dot" onclick={currentSlide(0)}>1</a>
@@ -148,26 +148,26 @@ function currentSlide(e) {
                     <a className="dot" onclick={currentSlide(2)}>3</a>
                   </div>
                 </div>
-
-                <div className="slides fade" style={{"display": "block"}}>
-                  <div className="slide-content" style={{"width":"100%"}}>
-                    {/* <div className="weather-temp">{`${Math.floor(weather.list[1].feels_like.day)} ° F`}</div>
-                    <i className={`owf owf-${weather.list[1].weather[0].id}`}></i>
-                    <div className="weather-text">{weather.list[1].weather[0].description}</div> */}
-                    Tomorrow
+                <div className="slides-container">
+                  <div className="slides fade" style={{"display": "block"}}>
+                    <div className="slide-content" style={{"width":"100%"}}>
+                      <div className="weather-temp">{`${Math.floor(weather.list[1].feels_like.day)} ° F`}</div>
+                      <i className={`owf owf-${weather.list[1].weather[0].id}`}></i>
+                      <div className="weather-text">{weather.list[1].weather[0].description}</div>
+                      {/* Tomorrow */}
+                    </div>
+                  </div>
+                  <div className="slides fade" >
+                    <div className="slide-content" >
+                      Next Day
+                    </div>
+                  </div>
+                  <div className="slides fade" >
+                    <div className="slide-content" >
+                      3 days
+                    </div>
                   </div>
                 </div>
-                <div className="slides fade">
-                  <div className="slide-content" >
-                    Next Day
-                  </div>
-                </div>
-                <div className="slides fade">
-                  <div className="slide-content" >
-                    3 days
-                  </div>
-                </div>
-
                  {/* Next and previous buttons  */}
                 {/* <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a> */}
