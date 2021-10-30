@@ -14,12 +14,10 @@ const toQueryString = (obj) => {
 function Weather(props) {
 
     const [weather, setWeather] = useState(null)
-    const [forecast, setForecast] = useState(null)
     const [active, setActive] = useState(false)
     const [latitude, setLatitude] = useState(0)
     const [longitude, setLongitude] = useState(0)
     const [city, setCity] = useState(null)
-    const [display, setDisplay] = useState("none")
 
     // my api key: a41cd0fb11238b932ebc8c60d0c85b87
     const findLocation = () => {
@@ -82,10 +80,8 @@ function Weather(props) {
     };
       
       axios.request(options).then(function (response) {
+        setWeather(response.data);
           // setTemp(`${Math.floor(response.data.list[0].feels_like.day)} ° F`)
-        
-          // setWeather(response.data.list[0].weather[0].description);
-          setWeather(response.data);
           // setWeatherIcon(response.data.list[0].weather[0].id);
         console.log("weather", response.data)
       }).catch(function (error) {
@@ -109,9 +105,21 @@ function Weather(props) {
 //   showSlides(slideIndex += n);
 // }
 
-// // Thumbnail image controls
 function currentSlide(e) {
-  
+  // if (e ===) 
+  // showSlide.current
+  var slides = document.getElementsByClassName("slides");
+  // var dots = document.getElementsByClassName("dot");
+
+  for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[e].style.display = "block"
+
+  // for (let i = 0; i < dots.length; i++) {
+  //   dots[i].className = dots[i].className.replace(" active", "");
+  // }
+  // dots[e].className += " active";
 }
 
 
@@ -143,9 +151,9 @@ function currentSlide(e) {
               <div className="forecast">
                 <div className="forecast-lower-top"> 
                   <div className="forecast-nav"> 
-                    <a className="dot" onclick={currentSlide(0)}>1</a>
-                    <a className="dot" onclick={currentSlide(1)}>2</a>
-                    <a className="dot" onclick={currentSlide(2)}>3</a>
+                    <a className="dot" onClick={() => currentSlide(0)}>1</a>
+                    <a className="dot" onClick={() => currentSlide(1)}>2</a>
+                    <a className="dot" onClick={() => currentSlide(2)}>3</a>
                   </div>
                 </div>
                 <div className="slides-container">
@@ -157,14 +165,20 @@ function currentSlide(e) {
                       {/* Tomorrow */}
                     </div>
                   </div>
-                  <div className="slides fade" >
+                  <div className="slides fade">
                     <div className="slide-content" >
-                      Next Day
+                    <div className="weather-temp">{`${Math.floor(weather.list[2].feels_like.day)} ° F`}</div>
+                      <i className={`owf owf-${weather.list[2].weather[0].id}`}></i>
+                      <div className="weather-text">{weather.list[2].weather[0].description}</div>
+                      {/* Next Day */}
                     </div>
                   </div>
                   <div className="slides fade" >
                     <div className="slide-content" >
-                      3 days
+                    <div className="weather-temp">{`${Math.floor(weather.list[2].feels_like.day)} ° F`}</div>
+                      <i className={`owf owf-${weather.list[2].weather[0].id}`}></i>
+                      <div className="weather-text">{weather.list[2].weather[0].description}</div>
+                      {/* 3 days */}
                     </div>
                   </div>
                 </div>

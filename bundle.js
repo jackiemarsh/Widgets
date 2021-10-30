@@ -2520,35 +2520,25 @@ function Weather(props) {
       weather = _useState2[0],
       setWeather = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      forecast = _useState4[0],
-      setForecast = _useState4[1];
+      active = _useState4[0],
+      setActive = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState6 = _slicedToArray(_useState5, 2),
-      active = _useState6[0],
-      setActive = _useState6[1];
+      latitude = _useState6[0],
+      setLatitude = _useState6[1];
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState8 = _slicedToArray(_useState7, 2),
-      latitude = _useState8[0],
-      setLatitude = _useState8[1];
+      longitude = _useState8[0],
+      setLongitude = _useState8[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState10 = _slicedToArray(_useState9, 2),
-      longitude = _useState10[0],
-      setLongitude = _useState10[1];
-
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-      _useState12 = _slicedToArray(_useState11, 2),
-      city = _useState12[0],
-      setCity = _useState12[1];
-
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("none"),
-      _useState14 = _slicedToArray(_useState13, 2),
-      display = _useState14[0],
-      setDisplay = _useState14[1]; // my api key: a41cd0fb11238b932ebc8c60d0c85b87
+      city = _useState10[0],
+      setCity = _useState10[1]; // my api key: a41cd0fb11238b932ebc8c60d0c85b87
 
 
   var findLocation = function findLocation() {
@@ -2606,9 +2596,8 @@ function Weather(props) {
       }
     };
     axios__WEBPACK_IMPORTED_MODULE_1___default().request(options).then(function (response) {
-      // setTemp(`${Math.floor(response.data.list[0].feels_like.day)} ° F`)
-      // setWeather(response.data.list[0].weather[0].description);
-      setWeather(response.data); // setWeatherIcon(response.data.list[0].weather[0].id);
+      setWeather(response.data); // setTemp(`${Math.floor(response.data.list[0].feels_like.day)} ° F`)
+      // setWeatherIcon(response.data.list[0].weather[0].id);
 
       console.log("weather", response.data);
     })["catch"](function (error) {
@@ -2632,10 +2621,22 @@ function Weather(props) {
   // function plusSlides(n) {
   //   showSlides(slideIndex += n);
   // }
-  // // Thumbnail image controls
 
 
-  function currentSlide(e) {}
+  function currentSlide(e) {
+    // if (e ===) 
+    // showSlide.current
+    var slides = document.getElementsByClassName("slides"); // var dots = document.getElementsByClassName("dot");
+
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slides[e].style.display = "block"; // for (let i = 0; i < dots.length; i++) {
+    //   dots[i].className = dots[i].className.replace(" active", "");
+    // }
+    // dots[e].className += " active";
+  }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-main"
@@ -2679,13 +2680,19 @@ function Weather(props) {
     className: "forecast-nav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     className: "dot",
-    onclick: currentSlide(0)
+    onClick: function onClick() {
+      return currentSlide(0);
+    }
   }, "1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     className: "dot",
-    onclick: currentSlide(1)
+    onClick: function onClick() {
+      return currentSlide(1);
+    }
   }, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     className: "dot",
-    onclick: currentSlide(2)
+    onClick: function onClick() {
+      return currentSlide(2);
+    }
   }, "3"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slides-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -2708,11 +2715,23 @@ function Weather(props) {
     className: "slides fade"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slide-content"
-  }, "Next Day")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "weather-temp"
+  }, "".concat(Math.floor(weather.list[2].feels_like.day), " \xB0 F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+    className: "owf owf-".concat(weather.list[2].weather[0].id)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "weather-text"
+  }, weather.list[2].weather[0].description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slides fade"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slide-content"
-  }, "3 days"))))) : null);
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "weather-temp"
+  }, "".concat(Math.floor(weather.list[2].feels_like.day), " \xB0 F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+    className: "owf owf-".concat(weather.list[2].weather[0].id)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "weather-text"
+  }, weather.list[2].weather[0].description)))))) : null);
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Weather);
