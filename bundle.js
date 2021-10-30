@@ -2687,12 +2687,14 @@ function Weather(props) {
     className: "dot",
     onclick: currentSlide(2)
   }, "3"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "slides fade"
+    className: "slides fade",
+    style: {
+      "display": "block"
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slide-content",
     style: {
-      "width": "100%",
-      "display": "block"
+      "width": "100%"
     }
   }, "Tomorrow")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slides fade"

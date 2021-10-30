@@ -269,10 +269,12 @@ span {
 
 .slides {
 	display: none;
+	width: 100%;
+	position: relative;
 }
 
 .slide-content {
-	color: #f2f2f2;
+	color: darkgray;
   	font-size: 15px;
   	padding: 8px 12px;
   	position: absolute;

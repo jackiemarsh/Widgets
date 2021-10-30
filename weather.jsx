@@ -149,8 +149,8 @@ function currentSlide(e) {
                   </div>
                 </div>
 
-                <div className="slides fade">
-                  <div className="slide-content" style={{"width":"100%", "display": "block"}}>
+                <div className="slides fade" style={{"display": "block"}}>
+                  <div className="slide-content" style={{"width":"100%"}}>
                     {/* <div className="weather-temp">{`${Math.floor(weather.list[1].feels_like.day)} ° F`}</div>
                     <i className={`owf owf-${weather.list[1].weather[0].id}`}></i>
                     <div className="weather-text">{weather.list[1].weather[0].description}</div> */}
