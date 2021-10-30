@@ -2543,7 +2543,12 @@ function Weather(props) {
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState12 = _slicedToArray(_useState11, 2),
       city = _useState12[0],
-      setCity = _useState12[1]; // my api key: a41cd0fb11238b932ebc8c60d0c85b87
+      setCity = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("none"),
+      _useState14 = _slicedToArray(_useState13, 2),
+      display = _useState14[0],
+      setDisplay = _useState14[1]; // my api key: a41cd0fb11238b932ebc8c60d0c85b87
 
 
   var findLocation = function findLocation() {
@@ -2588,10 +2593,10 @@ function Weather(props) {
       method: 'GET',
       url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
       params: {
-        q: "".concat(city),
-        // q: 'Wilsonville',
-        lat: "".concat(latitude),
-        lon: "".concat(longitude),
+        // q: `${city}`,
+        q: 'Wilsonville',
+        // lat: `${latitude}`,
+        // lon: `${longitude}`,
         cnt: '4',
         units: 'imperial'
       },
@@ -2622,7 +2627,15 @@ function Weather(props) {
       return !active;
     });
     console.log("active?", active);
-  }
+  } // slide js
+  // // Next/previous controls
+  // function plusSlides(n) {
+  //   showSlides(slideIndex += n);
+  // }
+  // // Thumbnail image controls
+
+
+  function currentSlide(e) {}
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-main"
@@ -2665,19 +2678,30 @@ function Weather(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "forecast-nav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "#slide-1"
+    className: "dot",
+    onclick: currentSlide(0)
   }, "1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "#slide-2"
+    className: "dot",
+    onclick: currentSlide(1)
   }, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "#slide-3"
+    className: "dot",
+    onclick: currentSlide(2)
   }, "3"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "slides"
+    className: "slides fade"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "slide-1"
-  }, "Tomorrow"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "slide-2"
-  }, "Next Day"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "slide-3"
+    className: "slide-content",
+    style: {
+      "width": "100%",
+      "display": "block"
+    }
+  }, "Tomorrow")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "slides fade"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "slide-content"
+  }, "Next Day")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "slides fade"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "slide-content"
   }, "3 days")))) : null);
 }
 

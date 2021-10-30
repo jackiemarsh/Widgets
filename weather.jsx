@@ -19,6 +19,7 @@ function Weather(props) {
     const [latitude, setLatitude] = useState(0)
     const [longitude, setLongitude] = useState(0)
     const [city, setCity] = useState(null)
+    const [display, setDisplay] = useState("none")
 
     // my api key: a41cd0fb11238b932ebc8c60d0c85b87
     const findLocation = () => {
@@ -43,6 +44,7 @@ function Weather(props) {
                   console.error(error);
               });
         });
+
         if (!city) {
         return(
           <div className="loading">Locating you</div>
@@ -66,10 +68,10 @@ function Weather(props) {
       method: 'GET',
       url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
       params: {
-        q: `${city}`,
-        // q: 'Wilsonville',
-        lat: `${latitude}`,
-        lon: `${longitude}`,
+        // q: `${city}`,
+        q: 'Wilsonville',
+        // lat: `${latitude}`,
+        // lon: `${longitude}`,
         cnt: '4',
         units: 'imperial'
       },
@@ -100,6 +102,19 @@ function Weather(props) {
       console.log("active?", active)
     }
 
+    // slide js
+
+// // Next/previous controls
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
+// }
+
+// // Thumbnail image controls
+function currentSlide(e) {
+  
+}
+
+
     return(
         <div className="weather-main">
             <div className="location">{findLocation()}</div>
@@ -128,26 +143,34 @@ function Weather(props) {
                   <div className="weather-button" onClick={() => toggleScreen()}>today</div>
                 <div className="forecast-lower-top"> 
                   <div className="forecast-nav"> 
-                    <a href="#slide-1">1</a>
-                    <a href="#slide-2">2</a>
-                    <a href="#slide-3">3</a>
+                    <a className="dot" onclick={currentSlide(0)}>1</a>
+                    <a className="dot" onclick={currentSlide(1)}>2</a>
+                    <a className="dot" onclick={currentSlide(2)}>3</a>
                   </div>
                 </div>
 
-                <div className="slides">
-                  <div id="slide-1">
+                <div className="slides fade">
+                  <div className="slide-content" style={{"width":"100%", "display": "block"}}>
                     {/* <div className="weather-temp">{`${Math.floor(weather.list[1].feels_like.day)} ° F`}</div>
                     <i className={`owf owf-${weather.list[1].weather[0].id}`}></i>
                     <div className="weather-text">{weather.list[1].weather[0].description}</div> */}
                     Tomorrow
                   </div>
-                  <div id="slide-2">
+                </div>
+                <div className="slides fade">
+                  <div className="slide-content" >
                     Next Day
                   </div>
-                  <div id="slide-3">
+                </div>
+                <div className="slides fade">
+                  <div className="slide-content" >
                     3 days
                   </div>
                 </div>
+
+                 {/* Next and previous buttons  */}
+                {/* <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a> */}
               </div>
           </div>
                : 
