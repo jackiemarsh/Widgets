@@ -109,17 +109,17 @@ function currentSlide(e) {
   // if (e ===) 
   // showSlide.current
   var slides = document.getElementsByClassName("slides");
-  // var dots = document.getElementsByClassName("dot");
+  var dots = document.getElementsByClassName("dot");
 
   for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
   slides[e].style.display = "block"
 
-  // for (let i = 0; i < dots.length; i++) {
-  //   dots[i].className = dots[i].className.replace(" active", "");
-  // }
-  // dots[e].className += " active";
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active-dot", "");
+  }
+  dots[e].className += " active-dot";
 }
 
 
@@ -147,38 +147,47 @@ function currentSlide(e) {
             </div> 
             :  
             <div className="forecast-lower"> 
-                  <div className="weather-button" onClick={() => toggleScreen()}>today</div>
+                  <div className="weather-button" onClick={() => toggleScreen()}>back to today</div>
               <div className="forecast">
                 <div className="forecast-lower-top"> 
                   <div className="forecast-nav"> 
-                    <a className="dot" onClick={() => currentSlide(0)}>1</a>
-                    <a className="dot" onClick={() => currentSlide(1)}>2</a>
-                    <a className="dot" onClick={() => currentSlide(2)}>3</a>
+                    <a className="dot" onClick={() => currentSlide(0)}>Tomorrow</a>
+                    <a className="dot" onClick={() => currentSlide(1)}>2 Day</a>
+                    <a className="dot" onClick={() => currentSlide(2)}>3 Day</a>
                   </div>
                 </div>
                 <div className="slides-container">
+                  {/* slide 1 */}
                   <div className="slides fade" style={{"display": "block"}}>
                     <div className="slide-content" style={{"width":"100%"}}>
                       <div className="weather-temp">{`${Math.floor(weather.list[1].feels_like.day)} ° F`}</div>
-                      <i className={`owf owf-${weather.list[1].weather[0].id}`}></i>
-                      <div className="weather-text">{weather.list[1].weather[0].description}</div>
-                      {/* Tomorrow */}
+                      <div className="weather-info">
+                        <i className={`owf owf-${weather.list[1].weather[0].id}`}></i>
+                        <div className="weather-text">{weather.list[1].weather[0].description}</div>
+                        {/* Tomorrow */}
+                      </div>
                     </div>
                   </div>
+                  {/* slide 2 */}
                   <div className="slides fade">
                     <div className="slide-content" >
-                    <div className="weather-temp">{`${Math.floor(weather.list[2].feels_like.day)} ° F`}</div>
-                      <i className={`owf owf-${weather.list[2].weather[0].id}`}></i>
-                      <div className="weather-text">{weather.list[2].weather[0].description}</div>
-                      {/* Next Day */}
+                      <div className="weather-temp">{`${Math.floor(weather.list[2].feels_like.day)} ° F`}</div>
+                      <div className="weather-info">
+                        <i className={`owf owf-${weather.list[2].weather[0].id}`}></i>
+                        <div className="weather-text">{weather.list[2].weather[0].description}</div>
+                        {/* Next Day */}
+                      </div>
                     </div>
                   </div>
+                  {/* slide 3 */}
                   <div className="slides fade" >
                     <div className="slide-content" >
-                    <div className="weather-temp">{`${Math.floor(weather.list[2].feels_like.day)} ° F`}</div>
-                      <i className={`owf owf-${weather.list[2].weather[0].id}`}></i>
-                      <div className="weather-text">{weather.list[2].weather[0].description}</div>
-                      {/* 3 days */}
+                      <div className="weather-temp">{`${Math.floor(weather.list[2].feels_like.day)} ° F`}</div>
+                      <div className="weather-info">
+                        <i className={`owf owf-${weather.list[2].weather[0].id}`}></i>
+                        <div className="weather-text">{weather.list[2].weather[0].description}</div>
+                        {/* 3 days */}
+                      </div>
                     </div>
                   </div>
                 </div>

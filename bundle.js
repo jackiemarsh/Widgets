@@ -2626,16 +2626,20 @@ function Weather(props) {
   function currentSlide(e) {
     // if (e ===) 
     // showSlide.current
-    var slides = document.getElementsByClassName("slides"); // var dots = document.getElementsByClassName("dot");
+    var slides = document.getElementsByClassName("slides");
+    var dots = document.getElementsByClassName("dot");
 
     for (var i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
 
-    slides[e].style.display = "block"; // for (let i = 0; i < dots.length; i++) {
-    //   dots[i].className = dots[i].className.replace(" active", "");
-    // }
-    // dots[e].className += " active";
+    slides[e].style.display = "block";
+
+    for (var _i2 = 0; _i2 < dots.length; _i2++) {
+      dots[_i2].className = dots[_i2].className.replace(" active-dot", "");
+    }
+
+    dots[e].className += " active-dot";
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -2672,7 +2676,7 @@ function Weather(props) {
     onClick: function onClick() {
       return toggleScreen();
     }
-  }, "today"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "back to today"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "forecast"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "forecast-lower-top"
@@ -2683,17 +2687,17 @@ function Weather(props) {
     onClick: function onClick() {
       return currentSlide(0);
     }
-  }, "1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }, "Tomorrow"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     className: "dot",
     onClick: function onClick() {
       return currentSlide(1);
     }
-  }, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }, "2 Day"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     className: "dot",
     onClick: function onClick() {
       return currentSlide(2);
     }
-  }, "3"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "3 Day"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slides-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slides fade",
@@ -2707,31 +2711,37 @@ function Weather(props) {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-temp"
-  }, "".concat(Math.floor(weather.list[1].feels_like.day), " \xB0 F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+  }, "".concat(Math.floor(weather.list[1].feels_like.day), " \xB0 F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "weather-info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
     className: "owf owf-".concat(weather.list[1].weather[0].id)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-text"
-  }, weather.list[1].weather[0].description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, weather.list[1].weather[0].description)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slides fade"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slide-content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-temp"
-  }, "".concat(Math.floor(weather.list[2].feels_like.day), " \xB0 F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+  }, "".concat(Math.floor(weather.list[2].feels_like.day), " \xB0 F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "weather-info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
     className: "owf owf-".concat(weather.list[2].weather[0].id)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-text"
-  }, weather.list[2].weather[0].description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, weather.list[2].weather[0].description)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slides fade"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slide-content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-temp"
-  }, "".concat(Math.floor(weather.list[2].feels_like.day), " \xB0 F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+  }, "".concat(Math.floor(weather.list[2].feels_like.day), " \xB0 F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "weather-info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
     className: "owf owf-".concat(weather.list[2].weather[0].id)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-text"
-  }, weather.list[2].weather[0].description)))))) : null);
+  }, weather.list[2].weather[0].description))))))) : null);
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Weather);
