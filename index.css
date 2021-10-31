@@ -224,12 +224,12 @@ span {
 }
 
 .weather-lower-left {
-	border: 2px darkgray dotted;
-	border-radius: 8px;
+	/* border: 2px darkgray dotted;
+	border-radius: 8px; */
 	height: fit-content;
 	width: fit-content;
-	padding: 6%;
-	margin: 0 0 6% 6%;
+	/* padding: 6%; */
+	margin: 0 0 3% 7%;
 	align-self: flex-end;
 	box-sizing: border-box;
 }
@@ -239,7 +239,16 @@ span {
 } */
 
 .weather-lower-content {
+	border: 2px darkgray dotted;
+	border-radius: 8px;
+	padding: 8%;
+	margin: 0 0 8% 8%;
 	width: 100%;
+	box-sizing: border-box;
+}
+
+.date {
+	margin-bottom: 8px;
 }
 /* .location {
 	justify-self: flex-start;
@@ -300,7 +309,7 @@ span {
 	border-radius: 8px;
 	height: fit-content;
 	width: fit-content;
-	padding: 7%;
+	padding: 5%;
 	margin: 0 0 7% 7%;
 	align-self: flex-end;
 	box-sizing: border-box;

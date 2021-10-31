@@ -130,6 +130,7 @@ function currentSlide(e) {
               active === false ?
             <div className="weather-lower"> 
               <div className="weather-lower-left"> 
+                <div className="date">Today's Date</div>
                 <div className="weather-lower-content">
                   <div className="weather-temp">{`${Math.floor(weather.list[0].feels_like.day)} ° F`}</div>
                   <div className="weather-info">
