@@ -124,6 +124,13 @@ function currentSlide(e) {
   dots[e].className += " active-dot";
 }
 
+function forecastDate() {
+  var currentDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+  var day = currentDate.getDate()
+  var month = currentDate.getMonth() + 1
+
+  return `${month}/${day}`
+}
 
     return(
         <div className="weather-main">
@@ -153,9 +160,9 @@ function currentSlide(e) {
               <div className="forecast">
                 <div className="forecast-lower-top"> 
                   <div className="forecast-nav"> 
-                    <a className="dot" onClick={() => currentSlide(0)}>Tomorrow</a>
-                    <a className="dot" onClick={() => currentSlide(1)}>2 Day</a>
-                    <a className="dot" onClick={() => currentSlide(2)}>3 Day</a>
+                    <a className="dot active-dot" onClick={() => currentSlide(0)}>{forecastDate()}</a>
+                    <a className="dot" onClick={() => currentSlide(1)}>Butt</a>
+                    <a className="dot" onClick={() => currentSlide(2)}>Face</a>
                   </div>
                 </div>
                 <div className="slides-container">
