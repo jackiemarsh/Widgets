@@ -147,7 +147,7 @@ function currentSlide(e) {
                 </div> */}
               </div> 
             </div> 
-            
+            :  
             <div className="forecast-lower"> 
                   <div className="weather-button" onClick={() => toggleScreen()}>back to today</div>
               <div className="forecast">
