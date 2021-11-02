@@ -2538,7 +2538,12 @@ function Weather(props) {
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState10 = _slicedToArray(_useState9, 2),
       city = _useState10[0],
-      setCity = _useState10[1]; // my api key: a41cd0fb11238b932ebc8c60d0c85b87
+      setCity = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(new Date()),
+      _useState12 = _slicedToArray(_useState11, 2),
+      date = _useState12[0],
+      setDate = _useState12[1]; // my api key: a41cd0fb11238b932ebc8c60d0c85b87
 
 
   var findLocation = function findLocation() {
@@ -2600,6 +2605,7 @@ function Weather(props) {
       // setWeatherIcon(response.data.list[0].weather[0].id);
 
       console.log("weather", response.data);
+      console.log("date", date);
     })["catch"](function (error) {
       console.error(error);
     });
@@ -2652,7 +2658,7 @@ function Weather(props) {
     className: "weather-lower-left"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "date"
-  }, "Today's Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, date.toDateString()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-lower-content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-temp"
@@ -2669,9 +2675,7 @@ function Weather(props) {
     onClick: function onClick() {
       return toggleScreen();
     }
-  }, "3-day forecast"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "weather-lower-content"
-  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "3-day forecast"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "forecast-lower"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "weather-button",

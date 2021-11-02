@@ -18,6 +18,7 @@ function Weather(props) {
     const [latitude, setLatitude] = useState(0)
     const [longitude, setLongitude] = useState(0)
     const [city, setCity] = useState(null)
+    const [date, setDate] = useState(new Date())
 
     // my api key: a41cd0fb11238b932ebc8c60d0c85b87
     const findLocation = () => {
@@ -84,6 +85,7 @@ function Weather(props) {
           // setTemp(`${Math.floor(response.data.list[0].feels_like.day)} ° F`)
           // setWeatherIcon(response.data.list[0].weather[0].id);
         console.log("weather", response.data)
+        console.log("date", date)
       }).catch(function (error) {
           console.error(error);
       });
@@ -130,7 +132,7 @@ function currentSlide(e) {
               active === false ?
             <div className="weather-lower"> 
               <div className="weather-lower-left"> 
-                <div className="date">Today's Date</div>
+                <div className="date">{date.toDateString()}</div>
                 <div className="weather-lower-content">
                   <div className="weather-temp">{`${Math.floor(weather.list[0].feels_like.day)} ° F`}</div>
                   <div className="weather-info">
@@ -141,12 +143,11 @@ function currentSlide(e) {
               </div> 
               <div className="weather-lower-right"> 
                   <div className="weather-button" onClick={() => toggleScreen()}>3-day forecast</div>
-                <div className="weather-lower-content">
-                  {/* include lower right in conditional, also forecast button that grabs info on click  */}
-                </div>
+                {/* <div className="weather-lower-content">
+                </div> */}
               </div> 
             </div> 
-            :  
+            
             <div className="forecast-lower"> 
                   <div className="weather-button" onClick={() => toggleScreen()}>back to today</div>
               <div className="forecast">
