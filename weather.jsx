@@ -123,6 +123,7 @@ function currentSlide(e) {
   }
   dots[e].className += " active-dot";
 }
+
 function forecastDate() {
   var currentDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
   var day = currentDate.getDate()
