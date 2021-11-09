@@ -2393,17 +2393,17 @@ function Root() {
     title: "Clock Probably",
     content: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_clock__WEBPACK_IMPORTED_MODULE_1__["default"], null)
   }, {
-    title: "Weather Crap",
+    title: "Weather McTemperature",
     content: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_weather__WEBPACK_IMPORTED_MODULE_3__["default"], null)
   }, {
-    title: "look it's a tab",
+    title: "Get Inspired",
     content: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_quote__WEBPACK_IMPORTED_MODULE_4__["default"], null)
   }];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "main-cont"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     className: "title"
-  }, "My Widgets Project"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "My Dashboard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"], {
     tabInfo: tabInfo
   }));
 }

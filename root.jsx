@@ -9,13 +9,13 @@ function Root() {
 
   const tabInfo = [
     {title: "Clock Probably", content: <Clock />},
-    {title: "Weather Crap", content: <Weather /> },
-    {title: "look it's a tab", content: <Quote />}
+    {title: "Weather McTemperature", content: <Weather /> },
+    {title: "Get Inspired", content: <Quote />}
   ];
   
     return (
       <div className="main-cont">
-        <h1 className="title">My Widgets Project</h1>
+        <h1 className="title">My Dashboard</h1>
         <Tabs tabInfo={tabInfo} />
         {/* <Weather /> */}
         
