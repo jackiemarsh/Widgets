@@ -2393,7 +2393,7 @@ function Root() {
     title: "Clock Probably",
     content: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_clock__WEBPACK_IMPORTED_MODULE_1__["default"], null)
   }, {
-    title: "Weather McTemperature",
+    title: "Weather McTemp",
     content: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_weather__WEBPACK_IMPORTED_MODULE_3__["default"], null)
   }, {
     title: "Get Inspired",
