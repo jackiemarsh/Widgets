@@ -56,9 +56,9 @@ function Quote() {
     return(
         <div className="quote-main">
             <div className="quote-top"> 
-                <div className="quote-button">
-                    <h1>Random Quotes</h1>
-                    <button onClick={getQuote} >Click Here</button>
+                <div className="quote-field">
+                    {/* <h1>Random Quotes</h1> */}
+                    <button className="quote-button" onClick={getQuote} >Generate Random Quote</button>
                 </div>
                 <div className="dropdown" onMouseEnter={() => setReveal(true)} onMouseLeave={() => setReveal(false)} >
                     <div className="drop-title">{languages[language]}</div>

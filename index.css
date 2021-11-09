@@ -457,7 +457,7 @@ span {
 	padding: 4px;
 }
 
-.quote-button {
+.quote-field {
 	cursor: pointer;
 	width: 200px;
 	display: flex;
@@ -467,6 +467,12 @@ span {
 	text-align: center;
 	box-sizing: border-box;
 	padding: 4px;
+}
+
+.quote-button {
+	height: fit-content;
+    font-size: 2.5vh;
+	border-radius: 8px;
 }
 
 .quote-container {
