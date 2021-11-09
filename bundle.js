@@ -2589,7 +2589,7 @@ function Weather(props) {
       url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
       params: {
         // q: `${city}`,
-        q: 'Wilsonville',
+        q: 'Raleigh',
         // lat: `${latitude}`,
         // lon: `${longitude}`,
         cnt: '4',
@@ -2705,12 +2705,12 @@ function Weather(props) {
     onClick: function onClick() {
       return currentSlide(1);
     }
-  }, "Butt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }, "\uD83D\uDC49"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     className: "dot",
     onClick: function onClick() {
       return currentSlide(2);
     }
-  }, "Face"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "\uD83D\uDC49"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slides-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slides fade",

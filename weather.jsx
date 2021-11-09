@@ -68,7 +68,7 @@ function Weather(props) {
       url: 'https://community-open-weather-map.p.rapidapi.com/forecast/daily',
       params: {
         // q: `${city}`,
-        q: 'Wilsonville',
+        q: 'Raleigh',
         // lat: `${latitude}`,
         // lon: `${longitude}`,
         cnt: '4',
@@ -161,8 +161,8 @@ function forecastDate() {
                 <div className="forecast-lower-top"> 
                   <div className="forecast-nav"> 
                     <a className="dot active-dot" onClick={() => currentSlide(0)}>{forecastDate()}</a>
-                    <a className="dot" onClick={() => currentSlide(1)}>Butt</a>
-                    <a className="dot" onClick={() => currentSlide(2)}>Face</a>
+                    <a className="dot" onClick={() => currentSlide(1)}>👉</a>
+                    <a className="dot" onClick={() => currentSlide(2)}>👉</a>
                   </div>
                 </div>
                 <div className="slides-container">
