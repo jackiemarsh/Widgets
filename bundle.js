@@ -2273,23 +2273,23 @@ function Quote() {
       console.log(response.data);
       setQuote(response.data.content);
       setAuthor("- ".concat(response.data.originator.name));
-      console.log(quote);
+      console.log("quote", quote);
     })["catch"](function (error) {
       console.error(error);
     });
   }
 
   ;
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    setQuote(quote);
-  }, [language]);
 
   function changeLanguage(e) {
     setLanguage(e);
-    setReveal(false); // re-render useEffect?
-    // shit what else did i want it to do? change what button says? maybe
+    setReveal(false); // re-render quote with useEffect?
+    // what else did i want it to do? change what button says?? maybe
   }
 
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setQuote(quote);
+  }, [language]);
   var languages = {
     'en': "English",
     'es': "Spanish",

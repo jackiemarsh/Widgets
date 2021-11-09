@@ -458,7 +458,7 @@ span {
 }
 
 .quote-field {
-	cursor: pointer;
+
 	width: 200px;
 	display: flex;
 	flex-direction: column;
@@ -473,6 +473,7 @@ span {
 	height: fit-content;
     font-size: 2.5vh;
 	border-radius: 8px;
+	cursor: pointer;
 }
 
 .quote-container {

@@ -25,23 +25,24 @@ function Quote() {
           console.log(response.data);
           setQuote(response.data.content)
           setAuthor(`- ${response.data.originator.name}`)
-          console.log(quote)
-      }).catch(function (error) {
-          console.error(error);
-      });
+          console.log("quote", quote)
+        }).catch(function (error) {
+            console.error(error);
+        });
     };
 
-    useEffect( () => {
-        setQuote(quote)
-    }, [language])
-
+    
     function changeLanguage(e) {
         setLanguage(e)
         setReveal(false)
-        // re-render useEffect?
-        // shit what else did i want it to do? change what button says? maybe
+        // re-render quote with useEffect?
+        // what else did i want it to do? change what button says?? maybe
+        
     }
-      
+        useEffect( () => {
+            setQuote(quote)
+        }, [language])
+
     const languages = {
         'en': "English",
         'es': "Spanish",
