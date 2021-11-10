@@ -2650,8 +2650,8 @@ function Weather(props) {
   }
 
   function forecastDate(n) {
-    var currentDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
-    var day = currentDate.getDate() + n;
+    var currentDate = new Date(new Date().getTime() + 24 * n * 60 * 60 * 1000);
+    var day = currentDate.getDate();
     var month = currentDate.getMonth() + 1;
     return "".concat(month, "/").concat(day);
   }
@@ -2701,17 +2701,17 @@ function Weather(props) {
     onClick: function onClick() {
       return currentSlide(0);
     }
-  }, forecastDate(0)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }, forecastDate(1)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     className: "dot",
     onClick: function onClick() {
       return currentSlide(1);
     }
-  }, forecastDate(1)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }, forecastDate(2)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     className: "dot",
     onClick: function onClick() {
       return currentSlide(2);
     }
-  }, forecastDate(2)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, forecastDate(3)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slides-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "slides fade",

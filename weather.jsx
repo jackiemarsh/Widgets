@@ -125,8 +125,8 @@ function currentSlide(e) {
 }
 
 function forecastDate(n) {
-  var currentDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
-  var day = currentDate.getDate() + n
+  var currentDate = new Date(new Date().getTime() + 24*n * 60 * 60 * 1000);
+  var day = currentDate.getDate()
   var month = currentDate.getMonth() + 1
 
   return `${month}/${day}`
@@ -160,9 +160,9 @@ function forecastDate(n) {
               <div className="forecast">
                 <div className="forecast-lower-top"> 
                   <div className="forecast-nav"> 
-                    <a className="dot active-dot" onClick={() => currentSlide(0)}>{forecastDate(0)}</a>
-                    <a className="dot" onClick={() => currentSlide(1)}>{forecastDate(1)}</a>
-                    <a className="dot" onClick={() => currentSlide(2)}>{forecastDate(2)}</a>
+                    <a className="dot active-dot" onClick={() => currentSlide(0)}>{forecastDate(1)}</a>
+                    <a className="dot" onClick={() => currentSlide(1)}>{forecastDate(2)}</a>
+                    <a className="dot" onClick={() => currentSlide(2)}>{forecastDate(3)}</a>
                   </div>
                 </div>
                 <div className="slides-container">
