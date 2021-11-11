@@ -2300,6 +2300,23 @@ function Quote() {
     'cs': "Russian",
     'sk': "Slovak"
   };
+
+  function hideLang() {
+    arr = [];
+
+    for (var i = 0; i < arr.length; i++) {
+      /*#__PURE__*/
+      react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        style: {
+          "display": "".concat(hideLang)
+        },
+        onClick: function onClick() {
+          return changeLanguage('en');
+        }
+      }, "English");
+    }
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "quote-main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -2322,6 +2339,9 @@ function Quote() {
   }, languages[language]), reveal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "dropdown-content "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    style: {
+      "display": "".concat(hideLang)
+    },
     onClick: function onClick() {
       return changeLanguage('en');
     }

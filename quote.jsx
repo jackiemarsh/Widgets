@@ -30,7 +30,6 @@ function Quote() {
             console.error(error);
         });
     };
-
     
     function changeLanguage(e) {
         setLanguage(e)
@@ -54,6 +53,14 @@ function Quote() {
         'sk': "Slovak"
     }
 
+    function hideLang() {
+
+        arr = []
+        for(let i = 0; i < arr.length; i++) {
+        <p style={{"display":`${hideLang}`}} onClick={() => changeLanguage('en')}>English</p>
+        }
+    }
+
     return(
         <div className="quote-main">
             <div className="quote-top"> 
@@ -65,7 +72,7 @@ function Quote() {
                     <div className="drop-title">{languages[language]}</div>
                     {reveal && (
                     <div className={`dropdown-content `} >
-                        <p onClick={() => changeLanguage('en')}>English</p>
+                        <p style={{"display":`${hideLang}`}} onClick={() => changeLanguage('en')}>English</p>
                         <p onClick={() => changeLanguage('es')}>Spanish</p>
                         <p onClick={() => changeLanguage('pt')}>Portuguese</p>
                         <p onClick={() => changeLanguage('it')}>Italian</p>
