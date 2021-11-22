@@ -2196,7 +2196,13 @@ function Clock() {
   function tick() {
     var date = new Date();
     setTimeText(date.toLocaleTimeString());
-    setTimeHex("".concat(date.getHours()) + "".concat(date.getMinutes()) + "".concat(date.getSeconds()));
+    var hours = 0;
+    var minutes = 0;
+    var seconds = 0;
+    date.getHours() < 10 ? hours = "0" + "".concat(date.getHours()) : hours = date.getHours();
+    date.getMinutes() < 10 ? minutes = "0" + "".concat(date.getMinutes()) : minutes = date.getMinutes();
+    date.getSeconds() < 10 ? seconds = "0" + "".concat(date.getSeconds()) : seconds = date.getSeconds();
+    setTimeHex("".concat(hours) + "".concat(minutes) + "".concat(seconds));
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -2205,9 +2211,7 @@ function Clock() {
     className: "clock-title"
   }, "Clock Time"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "clock-nums"
-  }, timeText), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "clock-nums"
-  }, timeHex));
+  }, timeText));
 }
 
 ;
