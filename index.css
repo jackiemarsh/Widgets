@@ -65,7 +65,7 @@ h1 {
 }
 
 .title {
-	font-size: 8.5vw;
+	font-size: 7.5vw;
 	justify-self: center;
 }
 
@@ -93,7 +93,7 @@ h1 {
 .tab-header {
 	border-top: solid 1px darkgray;
 	border-bottom: solid 1px darkgray;
-	font-size: 4vw;
+	font-size: 3.5vw;
 	box-sizing: border-box;
 	padding: 4px;
 	background-color: rgb(240, 238, 238);

@@ -2176,8 +2176,13 @@ function Clock() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(new Date().toLocaleTimeString()),
       _useState2 = _slicedToArray(_useState, 2),
       timeText = _useState2[0],
-      setTimeText = _useState2[1]; // console.log(timeText)
+      setTimeText = _useState2[1]; //    console.log(timeText)
 
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+      _useState4 = _slicedToArray(_useState3, 2),
+      timeHex = _useState4[0],
+      setTimeHex = _useState4[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var timer = setInterval(function () {
@@ -2189,7 +2194,9 @@ function Clock() {
   }, []);
 
   function tick() {
-    setTimeText(new Date().toLocaleTimeString());
+    var date = new Date();
+    setTimeText(date.toLocaleTimeString());
+    setTimeHex("".concat(date.getHours()) + "".concat(date.getMinutes()) + "".concat(date.getSeconds()));
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -2198,7 +2205,9 @@ function Clock() {
     className: "clock-title"
   }, "Clock Time"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "clock-nums"
-  }, timeText));
+  }, timeText), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "clock-nums"
+  }, timeHex));
 }
 
 ;
