@@ -5,6 +5,7 @@ function Clock() {
     const [timeText, setTimeText] = useState(new Date().toLocaleTimeString())
 //    console.log(timeText)
     const [timeHex, setTimeHex] = useState()
+    const [contHex, setContHex] = useState()
 
     useEffect( () => {
         var timer = setInterval( () => tick(), 1000);
@@ -22,11 +23,15 @@ function Clock() {
         (date.getMinutes() < 10) ? minutes = `0`+`${date.getMinutes()}` : minutes = date.getMinutes();
         (date.getSeconds() < 10) ? seconds = `0`+`${date.getSeconds()}` : seconds = date.getSeconds();
        
-        setTimeHex(`${hours}` +`${minutes}`+`${seconds}`)
+        let r = 255 - hours
+        let r = 255 - hours
+        let r = 255 - hours
+
+        setTimeHex(`#`+`${hours}` +`${minutes}`+`${seconds}`)
     }
 
     return(
-        <div className="clock-main">
+        <div className="clock-main" style={{background: timeHex}}>
             <h1 className="clock-title">Clock Time</h1>
             <div className="clock-nums">{timeText}</div>
             {/* <div className="clock-nums">{timeHex}</div> */}
