@@ -40,7 +40,7 @@ function Clock() {
         <div className="clock-main" style={{background: timeHex}}>
             <h1 className="clock-title" style={{color: contHex}}>Clock Time</h1>
             <div className="clock-nums" style={{color: contHex}}>{timeText}</div>
-            <div className="clock-nums">{timeHex}</div>
+            {/* <div className="clock-nums">{timeHex}</div> */}
         </div>
     )
 };
