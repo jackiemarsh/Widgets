@@ -23,18 +23,24 @@ function Clock() {
         (date.getMinutes() < 10) ? minutes = `0`+`${date.getMinutes()}` : minutes = date.getMinutes();
         (date.getSeconds() < 10) ? seconds = `0`+`${date.getSeconds()}` : seconds = date.getSeconds();
        
-        let r = 255 - hours
-        let r = 255 - hours
-        let r = 255 - hours
+        let r = (255 - parseInt(hours, 16)).toString(16)
+        let g = (255 - parseInt(minutes, 16)).toString(16)
+        let b = (255 - parseInt(seconds, 16)).toString(16)
 
         setTimeHex(`#`+`${hours}` +`${minutes}`+`${seconds}`)
+        setContHex(`#`+`${r}` +`${g}`+`${b}`)
+        
+    }
+
+    function convert(num) {
+
     }
 
     return(
         <div className="clock-main" style={{background: timeHex}}>
-            <h1 className="clock-title">Clock Time</h1>
-            <div className="clock-nums">{timeText}</div>
-            {/* <div className="clock-nums">{timeHex}</div> */}
+            <h1 className="clock-title" style={{color: contHex}}>Clock Time</h1>
+            <div className="clock-nums" style={{color: contHex}}>{timeText}</div>
+            <div className="clock-nums">{timeHex}</div>
         </div>
     )
 };
