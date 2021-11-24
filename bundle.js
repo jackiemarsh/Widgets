@@ -2229,7 +2229,9 @@ function Clock() {
   }, "Clock Time"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "clock-nums",
     style: {
-      color: contHex
+      color: contHex,
+      border: "3px solid ".concat(contHex),
+      borderRadius: "5px"
     }
   }, timeText));
 }

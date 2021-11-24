@@ -442,8 +442,9 @@ span {
 }
 
 .clock-nums {
-	border: 3px solid black;
-	border-radius: 5px;
+	/* put border inline style */
+	/* border: 3px solid black;
+	border-radius: 5px; */
 	padding: 12px;
 	margin: 18px;
 	width: fit-content;
