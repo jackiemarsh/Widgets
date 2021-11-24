@@ -29,7 +29,7 @@ function Clock() {
 
         setTimeHex(`#`+`${hours.toString(16)}` +`${minutes.toString(16)}`+`${seconds.toString(16)}`)
         setContHex(`#`+`${r}` +`${g}`+`${b}`)
-        
+        console.log(hours, hours.toString(16))
     }
 
     function convert(num) {
@@ -40,8 +40,8 @@ function Clock() {
         <div className="clock-main" style={{background: timeHex}}>
             <h1 className="clock-title" style={{color: contHex}}>Clock Time</h1>
             <div className="clock-nums" style={{color: contHex, border: `3px solid ${contHex}`, borderRadius: "5px"}}>{timeText}</div>
-            {/* <div className="clock-nums">{timeHex}</div>
-            <div className="clock-nums">{contHex}</div> */}
+            {/* <div className="clock-nums">{timeHex}</div> */}
+            {/* <div className="clock-nums">{contHex}</div> */}
         </div>
     )
 };

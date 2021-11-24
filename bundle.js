@@ -2212,6 +2212,7 @@ function Clock() {
     var b = (255 - parseInt(seconds, 16)).toString(16);
     setTimeHex("#" + "".concat(hours.toString(16)) + "".concat(minutes.toString(16)) + "".concat(seconds.toString(16)));
     setContHex("#" + "".concat(r) + "".concat(g) + "".concat(b));
+    console.log(hours, hours.toString(16));
   }
 
   function convert(num) {}
