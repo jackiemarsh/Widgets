@@ -53,12 +53,15 @@ function Quote() {
         'sk': "Slovak"
     }
 
-    function hideLang() {
+    function hideLang(lang) {
 
-        arr = []
-        for(let i = 0; i < arr.length; i++) {
-        <p style={{"display":`${hideLang}`}} onClick={() => changeLanguage('en')}>English</p>
-        }
+        return language === lang ? "none" : "block"
+        
+        // arr = []
+        // for(let i = 0; i < arr.length; i++) {
+
+        // <p style={{"display":`${hideLang}`}} onClick={() => changeLanguage('en')}>English</p>
+        // }
     }
 
     return(
@@ -72,7 +75,7 @@ function Quote() {
                     <div className="drop-title">{languages[language]}</div>
                     {reveal && (
                     <div className={`dropdown-content `} >
-                        <p style={{"display":`${hideLang}`}} onClick={() => changeLanguage('en')}>English</p>
+                        <p style={{"display":`${hideLang('en')}`}} onClick={() => changeLanguage('en')}>English</p>
                         <p onClick={() => changeLanguage('es')}>Spanish</p>
                         <p onClick={() => changeLanguage('pt')}>Portuguese</p>
                         <p onClick={() => changeLanguage('it')}>Italian</p>

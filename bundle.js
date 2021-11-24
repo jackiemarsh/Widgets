@@ -2337,20 +2337,11 @@ function Quote() {
     'sk': "Slovak"
   };
 
-  function hideLang() {
-    arr = [];
-
-    for (var i = 0; i < arr.length; i++) {
-      /*#__PURE__*/
-      react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-        style: {
-          "display": "".concat(hideLang)
-        },
-        onClick: function onClick() {
-          return changeLanguage('en');
-        }
-      }, "English");
-    }
+  function hideLang(lang) {
+    return language === lang ? "none" : "block"; // arr = []
+    // for(let i = 0; i < arr.length; i++) {
+    // <p style={{"display":`${hideLang}`}} onClick={() => changeLanguage('en')}>English</p>
+    // }
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -2376,7 +2367,7 @@ function Quote() {
     className: "dropdown-content "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     style: {
-      "display": "".concat(hideLang)
+      "display": "".concat(hideLang('en'))
     },
     onClick: function onClick() {
       return changeLanguage('en');
