@@ -2373,30 +2373,51 @@ function Quote() {
       return changeLanguage('en');
     }
   }, "English"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    style: {
+      "display": "".concat(hideLang('es'))
+    },
     onClick: function onClick() {
       return changeLanguage('es');
     }
   }, "Spanish"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    style: {
+      "display": "".concat(hideLang('pt'))
+    },
     onClick: function onClick() {
       return changeLanguage('pt');
     }
   }, "Portuguese"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    style: {
+      "display": "".concat(hideLang('it'))
+    },
     onClick: function onClick() {
       return changeLanguage('it');
     }
   }, "Italian"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    style: {
+      "display": "".concat(hideLang('de'))
+    },
     onClick: function onClick() {
       return changeLanguage('de');
     }
   }, "German"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    style: {
+      "display": "".concat(hideLang('fr'))
+    },
     onClick: function onClick() {
       return changeLanguage('fr');
     }
   }, "French"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    style: {
+      "display": "".concat(hideLang('cs'))
+    },
     onClick: function onClick() {
       return changeLanguage('cs');
     }
   }, "Russian"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    style: {
+      "display": "".concat(hideLang('sk'))
+    },
     onClick: function onClick() {
       return changeLanguage('sk');
     }

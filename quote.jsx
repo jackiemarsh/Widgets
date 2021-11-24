@@ -76,14 +76,14 @@ function Quote() {
                     {reveal && (
                     <div className={`dropdown-content `} >
                         <p style={{"display":`${hideLang('en')}`}} onClick={() => changeLanguage('en')}>English</p>
-                        <p onClick={() => changeLanguage('es')}>Spanish</p>
-                        <p onClick={() => changeLanguage('pt')}>Portuguese</p>
-                        <p onClick={() => changeLanguage('it')}>Italian</p>
-                        <p onClick={() => changeLanguage('de')}>German</p>
-                        <p onClick={() => changeLanguage('fr')}>French</p>
-                        <p onClick={() => changeLanguage('cs')}>Russian</p>
+                        <p style={{"display":`${hideLang('es')}`}} onClick={() => changeLanguage('es')}>Spanish</p>
+                        <p style={{"display":`${hideLang('pt')}`}} onClick={() => changeLanguage('pt')}>Portuguese</p>
+                        <p style={{"display":`${hideLang('it')}`}} onClick={() => changeLanguage('it')}>Italian</p>
+                        <p style={{"display":`${hideLang('de')}`}} onClick={() => changeLanguage('de')}>German</p>
+                        <p style={{"display":`${hideLang('fr')}`}} onClick={() => changeLanguage('fr')}>French</p>
+                        <p style={{"display":`${hideLang('cs')}`}} onClick={() => changeLanguage('cs')}>Russian</p>
                         {/* <p>Czech</p> */}
-                        <p onClick={() => changeLanguage('sk')}>Slovak</p>
+                        <p style={{"display":`${hideLang('sk')}`}} onClick={() => changeLanguage('sk')}>Slovak</p>
                         {/* <p>Polish</p>
                         <p>Hungarian</p> */}
                     </div>
