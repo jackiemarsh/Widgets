@@ -2210,7 +2210,7 @@ function Clock() {
     var r = (255 - parseInt(hours, 16)).toString(16);
     var g = (255 - parseInt(minutes, 16)).toString(16);
     var b = (255 - parseInt(seconds, 16)).toString(16);
-    setTimeHex("#" + "".concat(hours) + "".concat(minutes) + "".concat(seconds));
+    setTimeHex("#" + "".concat(hours.toString(16)) + "".concat(minutes.toString(16)) + "".concat(seconds.toString(16)));
     setContHex("#" + "".concat(r) + "".concat(g) + "".concat(b));
   }
 
