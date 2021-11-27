@@ -7,6 +7,7 @@ function Quote() {
     const [author, setAuthor] = useState(null)
     const [language, setLanguage] = useState("en")
     const [reveal, setReveal] = useState(false)
+
     function getQuote(e) {
         e.preventDefault();
         const options = {
