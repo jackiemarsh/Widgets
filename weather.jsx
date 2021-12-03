@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
-const toQueryString = (obj) => {
-    const parts = [];
-    for (let i in obj) {
-        if (obj.hasOwnProperty(i)) {
-            parts.push(`${encodeURIComponent(i)}=${encodeURIComponent(obj[i])}`);
-        }
-    }
-    return parts.join('&');
-}
+// const toQueryString = (obj) => {
+//     const parts = [];
+//     for (let i in obj) {
+//         if (obj.hasOwnProperty(i)) {
+//             parts.push(`${encodeURIComponent(i)}=${encodeURIComponent(obj[i])}`);
+//         }
+//     }
+//     return parts.join('&');
+// }
 
 function Weather(props) {
 
