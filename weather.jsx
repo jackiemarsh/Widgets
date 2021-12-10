@@ -10,7 +10,6 @@ import axios from "axios";
 //     }
 //     return parts.join('&');
 // }
-
 function Weather(props) {
 
     const [weather, setWeather] = useState(null)

@@ -2569,19 +2569,15 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
-
-
-var toQueryString = function toQueryString(obj) {
-  var parts = [];
-
-  for (var i in obj) {
-    if (obj.hasOwnProperty(i)) {
-      parts.push("".concat(encodeURIComponent(i), "=").concat(encodeURIComponent(obj[i])));
-    }
-  }
-
-  return parts.join('&');
-};
+ // const toQueryString = (obj) => {
+//     const parts = [];
+//     for (let i in obj) {
+//         if (obj.hasOwnProperty(i)) {
+//             parts.push(`${encodeURIComponent(i)}=${encodeURIComponent(obj[i])}`);
+//         }
+//     }
+//     return parts.join('&');
+// }
 
 function Weather(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
