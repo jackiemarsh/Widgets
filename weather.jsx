@@ -131,7 +131,6 @@ function forecastDate(n) {
 
   return `${month}/${day}`
 }
-
     return(
         <div className="weather-main">
             <div className="location">{findLocation()}</div>
